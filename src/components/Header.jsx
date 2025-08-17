@@ -1,0 +1,250 @@
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Menu, X, Globe, Tv, Download, Search } from 'lucide-react'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../translations'
+
+const Header = () => {
+  const { language, toggleLanguage } = useLanguage()
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
+  
+  const t = translations[language] || translations['English']
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen)
+  }
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false)
+  }
+
+  return (
+    <>
+      {/* Top Bar - Mobile Responsive */}
+      <div className="bg-timesnow-red text-white mobile-header">
+        <div className="flex items-center justify-between">
+          {/* Left Side - Live TV & Download App */}
+          <div className="flex items-center space-x-3 sm:space-x-4">
+            <Link 
+              to="/live-tv" 
+              className="flex items-center space-x-1 text-xs sm:text-sm hover:text-gray-200 transition-colors"
+            >
+              <Tv size={16} className="sm:w-4 sm:h-4" />
+              <span className="hidden sm:inline">{t.liveTV}</span>
+            </Link>
+            <Link 
+              to="/download-app" 
+              className="flex items-center space-x-1 text-xs sm:text-sm hover:text-gray-200 transition-colors"
+            >
+              <Download size={16} className="sm:w-4 sm:h-4" />
+              <span className="hidden sm:inline">{t.downloadApp}</span>
+            </Link>
+          </div>
+
+          {/* Right Side - Language & Search */}
+          <div className="flex items-center space-x-3 sm:space-x-4">
+            <button
+              onClick={toggleSearch}
+              className="p-1 hover:bg-red-700 rounded transition-colors"
+              aria-label="Search"
+            >
+              <Search size={16} className="sm:w-4 sm:h-4" />
+            </button>
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center space-x-1 text-xs sm:text-sm hover:text-gray-200 transition-colors"
+            >
+              <Globe size={16} className="sm:w-4 sm:h-4" />
+              <span className="hidden sm:inline">{language === 'Hindi' ? 'हिंदी' : 'English'}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Search Bar - Mobile Responsive */}
+      {isSearchOpen && (
+        <div className="bg-white border-b border-gray-200 mobile-header">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder={t.searchPlaceholder || "Search news..."}
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-timesnow-red focus:border-transparent text-sm sm:text-base"
+            />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+            <button
+              onClick={toggleSearch}
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+            >
+              <X size={20} />
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Main Header - Mobile Responsive */}
+      <header className="bg-white shadow-sm mobile-header">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-2">
+            <img 
+              src="/src/components/logo.png" 
+              alt="Times Now India 27*7" 
+              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain" 
+            />
+            <span className="text-lg sm:text-xl md:text-2xl font-bold text-timesnow-dark">
+              Times Now India 27*7
+            </span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-6">
+            <Link to="/india" className="text-gray-700 hover:text-timesnow-red transition-colors font-medium">
+              {t.india}
+            </Link>
+            <Link to="/world" className="text-gray-700 hover:text-timesnow-red transition-colors font-medium">
+              {t.world}
+            </Link>
+            <Link to="/business" className="text-gray-700 hover:text-timesnow-red transition-colors font-medium">
+              {t.business}
+            </Link>
+            <Link to="/sports" className="text-gray-700 hover:text-timesnow-red transition-colors font-medium">
+              {t.sports}
+            </Link>
+            <Link to="/entertainment" className="text-gray-700 hover:text-timesnow-red transition-colors font-medium">
+              {t.entertainment}
+            </Link>
+            <Link to="/technology" className="text-gray-700 hover:text-timesnow-red transition-colors font-medium">
+              {t.technology}
+            </Link>
+            <Link to="/lifestyle" className="text-gray-700 hover:text-timesnow-red transition-colors font-medium">
+              {t.lifestyle}
+            </Link>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={toggleMobileMenu}
+            className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile Navigation Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 z-50 bg-white">
+          <div className="mobile-header border-b border-gray-200">
+            <div className="flex items-center justify-between">
+              <span className="text-lg font-semibold text-gray-800">{t.menu}</span>
+              <button
+                onClick={closeMobileMenu}
+                className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              >
+                <X size={24} />
+              </button>
+            </div>
+          </div>
+          
+          <nav className="mobile-header">
+            <div className="space-y-4">
+              <Link 
+                to="/india" 
+                onClick={closeMobileMenu}
+                className="block py-3 text-lg font-medium text-gray-700 hover:text-timesnow-red transition-colors border-b border-gray-100"
+              >
+                {t.india}
+              </Link>
+              <Link 
+                to="/world" 
+                onClick={closeMobileMenu}
+                className="block py-3 text-lg font-medium text-gray-700 hover:text-timesnow-red transition-colors border-b border-gray-100"
+              >
+                {t.world}
+              </Link>
+              <Link 
+                to="/business" 
+                onClick={closeMobileMenu}
+                className="block py-3 text-lg font-medium text-gray-700 hover:text-timesnow-red transition-colors border-b border-gray-100"
+              >
+                {t.business}
+              </Link>
+              <Link 
+                to="/sports" 
+                onClick={closeMobileMenu}
+                className="block py-3 text-lg font-medium text-gray-700 hover:text-timesnow-red transition-colors border-b border-gray-100"
+              >
+                {t.sports}
+              </Link>
+              <Link 
+                to="/entertainment" 
+                onClick={closeMobileMenu}
+                className="block py-3 text-lg font-medium text-gray-700 hover:text-timesnow-red transition-colors border-b border-gray-100"
+              >
+                {t.entertainment}
+              </Link>
+              <Link 
+                to="/technology" 
+                onClick={closeMobileMenu}
+                className="block py-3 text-lg font-medium text-gray-700 hover:text-timesnow-red transition-colors border-b border-gray-100"
+              >
+                {t.technology}
+              </Link>
+              <Link 
+                to="/lifestyle" 
+                onClick={closeMobileMenu}
+                className="block py-3 text-lg font-medium text-gray-700 hover:text-timesnow-red transition-colors border-b border-gray-100"
+              >
+                {t.lifestyle}
+              </Link>
+            </div>
+          </nav>
+
+          {/* Mobile Quick Actions */}
+          <div className="mobile-header bg-gray-50">
+            <div className="space-y-3">
+              <Link 
+                to="/live-tv" 
+                onClick={closeMobileMenu}
+                className="flex items-center space-x-3 py-3 text-gray-700 hover:text-timesnow-red transition-colors"
+              >
+                <Tv size={20} />
+                <span className="text-lg font-medium">{t.liveTV}</span>
+              </Link>
+              <Link 
+                to="/download-app" 
+                onClick={closeMobileMenu}
+                className="flex items-center space-x-3 py-3 text-gray-700 hover:text-timesnow-red transition-colors"
+              >
+                <Download size={20} />
+                <span className="text-lg font-medium">{t.downloadApp}</span>
+              </Link>
+              <div className="pt-3 border-t border-gray-200">
+                <button
+                  onClick={() => {
+                    toggleLanguage()
+                    closeMobileMenu()
+                  }}
+                  className="flex items-center space-x-3 py-3 text-gray-700 hover:text-timesnow-red transition-colors w-full"
+                >
+                  <Globe size={20} />
+                  <span className="text-lg font-medium">
+                    {language === 'Hindi' ? 'हिंदी में देखें' : 'View in Hindi'}
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  )
+}
+
+export default Header
