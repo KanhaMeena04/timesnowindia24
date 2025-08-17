@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Menu, X, Globe, Tv, Download, Search } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
+import logoImage from './logo.png'
 
 const Header = () => {
   const { language, toggleLanguage } = useLanguage()
@@ -26,8 +27,8 @@ const Header = () => {
   return (
     <>
       {/* Top Bar - Mobile Responsive */}
-      <div className="bg-timesnow-red text-white mobile-header">
-        <div className="flex items-center justify-between">
+      <div className="bg-timesnow-red text-white py-2 px-4">
+        <div className="flex items-center justify-between max-w-7xl mx-auto">
           {/* Left Side - Live TV & Download App */}
           <div className="flex items-center space-x-3 sm:space-x-4">
             <Link 
@@ -68,8 +69,8 @@ const Header = () => {
 
       {/* Search Bar - Mobile Responsive */}
       {isSearchOpen && (
-        <div className="bg-white border-b border-gray-200 mobile-header">
-          <div className="relative">
+        <div className="bg-white border-b border-gray-200 py-3 px-4">
+          <div className="relative max-w-7xl mx-auto">
             <input
               type="text"
               placeholder={t.searchPlaceholder || "Search news..."}
@@ -87,14 +88,14 @@ const Header = () => {
       )}
 
       {/* Main Header - Mobile Responsive */}
-      <header className="bg-white shadow-sm mobile-header">
-        <div className="flex items-center justify-between">
+      <header className="bg-white shadow-sm py-3 px-4">
+        <div className="flex items-center justify-between max-w-7xl mx-auto">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/src/components/logo.png" 
+              src={logoImage} 
               alt="Times Now India 27*7" 
-              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain" 
+              className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain" 
             />
             <span className="text-lg sm:text-xl md:text-2xl font-bold text-timesnow-dark">
               Times Now India 27*7
@@ -140,7 +141,7 @@ const Header = () => {
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-50 bg-white">
-          <div className="mobile-header border-b border-gray-200">
+          <div className="px-4 py-3 border-b border-gray-200">
             <div className="flex items-center justify-between">
               <span className="text-lg font-semibold text-gray-800">{t.menu}</span>
               <button
@@ -152,7 +153,7 @@ const Header = () => {
             </div>
           </div>
           
-          <nav className="mobile-header">
+          <nav className="px-4 py-4">
             <div className="space-y-4">
               <Link 
                 to="/india" 
@@ -207,7 +208,7 @@ const Header = () => {
           </nav>
 
           {/* Mobile Quick Actions */}
-          <div className="mobile-header bg-gray-50">
+          <div className="px-4 py-4 bg-gray-50">
             <div className="space-y-3">
               <Link 
                 to="/live-tv" 
