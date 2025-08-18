@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
-import { Megaphone, Users, TrendingUp, Target, BarChart3, Send, Globe, Monitor, Smartphone, Newspaper, Tv, Radio } from 'lucide-react'
+import { Megaphone, Users, TrendingUp, Target, BarChart3, Send, Globe, Monitor, Smartphone, Newspaper, Tv, Radio, Phone, Mail, MapPin } from 'lucide-react'
 
 const AdvertiseWithUs = () => {
   const { isHindi } = useLanguage()
@@ -263,43 +263,65 @@ const AdvertiseWithUs = () => {
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">
+            {/* Contact Information */}
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">
                 {isHindi ? 'संपर्क जानकारी' : 'Contact Information'}
               </h3>
-              
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="bg-purple-100 p-2 rounded-lg">
-                    <Megaphone size={20} className="text-purple-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Advertising Department</h4>
-                    <p className="text-gray-600">ads@timesnowindia.com</p>
-                    <p className="text-gray-600">+91 120 434 0001</p>
-                  </div>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <Phone size={20} className="text-timesnow-red" />
+                  <p className="text-gray-600">+91 9926890112</p>
                 </div>
-                
-                <div className="flex items-start gap-3">
-                  <div className="bg-blue-100 p-2 rounded-lg">
-                    <Globe size={20} className="text-blue-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Digital Marketing</h4>
-                    <p className="text-gray-600">digital@timesnowindia.com</p>
-                    <p className="text-gray-600">+91 120 434 0003</p>
-                  </div>
+                <div className="flex items-center space-x-3">
+                  <Mail size={20} className="text-timesnow-red" />
+                  <p className="text-gray-600">ads@timesnowindia.com</p>
                 </div>
-                
-                <div className="flex items-start gap-3">
-                  <div className="bg-green-100 p-2 rounded-lg">
-                    <BarChart3 size={20} className="text-green-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Media Planning</h4>
-                    <p className="text-gray-600">planning@timesnowindia.com</p>
-                    <p className="text-gray-600">+91 120 434 0004</p>
-                  </div>
+                <div className="flex items-center space-x-3">
+                  <MapPin size={20} className="text-timesnow-red" />
+                  <p className="text-gray-600">Times Now India 27*7 Centre, Noida</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Advertising Rates */}
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                {isHindi ? 'विज्ञापन दरें' : 'Advertising Rates'}
+              </h3>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <Phone size={20} className="text-timesnow-red" />
+                  <p className="text-gray-600">+91 9926890112</p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Mail size={20} className="text-timesnow-red" />
+                  <p className="text-gray-600">rates@timesnowindia.com</p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <MapPin size={20} className="text-timesnow-red" />
+                  <p className="text-gray-600">Custom pricing available</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Media Kit */}
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                {isHindi ? 'मीडिया किट' : 'Media Kit'}
+              </h3>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <Phone size={20} className="text-timesnow-red" />
+                  <p className="text-gray-600">+91 9926890112</p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Mail size={20} className="text-timesnow-red" />
+                  <p className="text-gray-600">mediakit@timesnowindia.com</p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <MapPin size={20} className="text-timesnow-red" />
+                  <p className="text-gray-600">Download available on request</p>
                 </div>
               </div>
             </div>

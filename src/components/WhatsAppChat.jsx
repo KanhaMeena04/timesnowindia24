@@ -8,13 +8,13 @@ const WhatsAppChat = () => {
   const [isOpen, setIsOpen] = useState(false)
   const { isHindi } = useLanguage()
   
-  // Replace this with your actual WhatsApp number (include country code)
-  const whatsappNumber = '919876543210' // Example: 919876543210 for +91 98765 43210
+  // WhatsApp number for Times Now India 27*7
+  const whatsappNumber = '919926890112' // +91 9926890112
   
   const handleWhatsAppClick = () => {
     const message = isHindi 
-      ? 'नमस्ते! मैं आपसे बात करना चाहता हूं।' 
-      : 'Hello! I would like to chat with you.'
+      ? 'नमस्ते! मैं टाइम्स नाउ इंडिया 27*7 से जुड़ना चाहता हूं।' 
+      : 'Hello! I would like to connect with Times Now India 27*7.'
     
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
@@ -111,6 +111,9 @@ const WhatsAppChat = () => {
               <div className="text-center">
                 <p className="text-xs sm:text-sm text-gray-600 font-medium">
                   {isHindi ? '24x7 उपलब्ध' : 'Available 24x7'}
+                </p>
+                <p className="text-xs text-gray-500 mt-1">
+                  {isHindi ? 'मोबाइल: +91 9926890112' : 'Mobile: +91 9926890112'}
                 </p>
                 <p className="text-xs text-gray-500 mt-1">
                   {isHindi ? 'तुरंत प्रतिक्रिया' : 'Instant Response'}

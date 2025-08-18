@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { TrendingUp, Clock } from 'lucide-react'
+import { TrendingUp, Clock, MapPin, Thermometer, Droplets, Wind, Sun, Cloud, CloudRain, CloudLightning } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
 
@@ -10,6 +10,94 @@ const Sidebar = () => {
   const t = translations[language] || translations['English']
   const [selectedStory, setSelectedStory] = useState(null)
   const [showVideoModal, setShowVideoModal] = useState(false)
+  const [selectedCity, setSelectedCity] = useState('Bhopal')
+
+  // Madhya Pradesh cities with weather data
+  const mpCities = [
+    { name: 'Bhopal', nameHindi: 'भोपाल', temp: 32, condition: 'sunny', humidity: 65, wind: 12 },
+    { name: 'Indore', nameHindi: 'इंदौर', temp: 35, condition: 'partly-cloudy', humidity: 58, wind: 15 },
+    { name: 'Jabalpur', nameHindi: 'जबलपुर', temp: 33, condition: 'cloudy', humidity: 72, wind: 8 },
+    { name: 'Gwalior', nameHindi: 'ग्वालियर', temp: 38, condition: 'sunny', humidity: 45, wind: 18 },
+    { name: 'Ujjain', nameHindi: 'उज्जैन', temp: 34, condition: 'partly-cloudy', humidity: 62, wind: 14 },
+    { name: 'Sagar', nameHindi: 'सागर', temp: 31, condition: 'cloudy', humidity: 68, wind: 10 },
+    { name: 'Dewas', nameHindi: 'देवास', temp: 33, condition: 'sunny', humidity: 60, wind: 16 },
+    { name: 'Ratlam', nameHindi: 'रतलाम', temp: 32, condition: 'partly-cloudy', humidity: 64, wind: 13 },
+    { name: 'Khandwa', nameHindi: 'खंडवा', temp: 36, condition: 'sunny', humidity: 55, wind: 17 },
+    { name: 'Burhanpur', nameHindi: 'बुरहानपुर', temp: 37, condition: 'sunny', humidity: 52, wind: 19 }
+  ]
+
+  // 5-day forecast data for selected city
+  const getForecastData = (cityName) => {
+    const forecasts = {
+      'Bhopal': [
+        { day: 'Today', temp: 32, condition: 'sunny', tempHindi: 'आज' },
+        { day: 'Tomorrow', temp: 34, condition: 'partly-cloudy', tempHindi: 'कल' },
+        { day: 'Wed', temp: 33, condition: 'cloudy', tempHindi: 'बुध' },
+        { day: 'Thu', temp: 31, condition: 'rainy', tempHindi: 'गुरु' },
+        { day: 'Fri', temp: 35, condition: 'sunny', tempHindi: 'शुक्र' }
+      ],
+      'Indore': [
+        { day: 'Today', temp: 35, condition: 'partly-cloudy', tempHindi: 'आज' },
+        { day: 'Tomorrow', temp: 37, condition: 'sunny', tempHindi: 'कल' },
+        { day: 'Wed', temp: 36, condition: 'sunny', tempHindi: 'बुध' },
+        { day: 'Thu', temp: 34, condition: 'partly-cloudy', tempHindi: 'गुरु' },
+        { day: 'Fri', temp: 38, condition: 'sunny', tempHindi: 'शुक्र' }
+      ],
+      'Jabalpur': [
+        { day: 'Today', temp: 33, condition: 'cloudy', tempHindi: 'आज' },
+        { day: 'Tomorrow', temp: 32, condition: 'rainy', tempHindi: 'कल' },
+        { day: 'Wed', temp: 30, condition: 'rainy', tempHindi: 'बुध' },
+        { day: 'Thu', temp: 31, condition: 'cloudy', tempHindi: 'गुरु' },
+        { day: 'Fri', temp: 34, condition: 'partly-cloudy', tempHindi: 'शुक्र' }
+      ],
+      'Gwalior': [
+        { day: 'Today', temp: 38, condition: 'sunny', tempHindi: 'आज' },
+        { day: 'Tomorrow', temp: 39, condition: 'sunny', tempHindi: 'कल' },
+        { day: 'Wed', temp: 37, condition: 'partly-cloudy', tempHindi: 'बुध' },
+        { day: 'Thu', temp: 36, condition: 'cloudy', tempHindi: 'गुरु' },
+        { day: 'Fri', temp: 40, condition: 'sunny', tempHindi: 'शुक्र' }
+      ],
+      'Ujjain': [
+        { day: 'Today', temp: 34, condition: 'partly-cloudy', tempHindi: 'आज' },
+        { day: 'Tomorrow', temp: 36, condition: 'sunny', tempHindi: 'कल' },
+        { day: 'Wed', temp: 35, condition: 'sunny', tempHindi: 'बुध' },
+        { day: 'Thu', temp: 33, condition: 'partly-cloudy', tempHindi: 'गुरु' },
+        { day: 'Fri', temp: 37, condition: 'sunny', tempHindi: 'शुक्र' }
+      ]
+    }
+    return forecasts[cityName] || forecasts['Bhopal']
+  }
+
+  const getWeatherIcon = (condition) => {
+    switch (condition) {
+      case 'sunny':
+        return <Sun size={20} className="text-yellow-500" />
+      case 'partly-cloudy':
+        return <Cloud size={20} className="text-gray-400" />
+      case 'cloudy':
+        return <Cloud size={20} className="text-gray-500" />
+      case 'rainy':
+        return <CloudRain size={20} className="text-blue-500" />
+      case 'stormy':
+        return <CloudLightning size={20} className="text-purple-500" />
+      default:
+        return <Sun size={20} className="text-yellow-500" />
+    }
+  }
+
+  const getWeatherConditionText = (condition) => {
+    const conditions = {
+      sunny: isHindi ? 'धूप' : 'Sunny',
+      'partly-cloudy': isHindi ? 'आंशिक बादल' : 'Partly Cloudy',
+      cloudy: isHindi ? 'बादल' : 'Cloudy',
+      rainy: isHindi ? 'बारिश' : 'Rainy',
+      stormy: isHindi ? 'तूफान' : 'Stormy'
+    }
+    return conditions[condition] || conditions.sunny
+  }
+
+  const selectedCityData = mpCities.find(city => city.name === selectedCity) || mpCities[0]
+  const forecastData = getForecastData(selectedCity)
 
   const trendingStories = [
     {
@@ -96,6 +184,138 @@ const Sidebar = () => {
   return (
     <>
       <div className="space-y-4 sm:space-y-6">
+        {/* Weather Section - Madhya Pradesh Cities */}
+        <div className="bg-white rounded-lg shadow-sm mobile-p">
+          <div className="flex items-center justify-between mb-3 sm:mb-4">
+            <h3 className="mobile-text-sm sm:mobile-text-base md:mobile-text-lg font-semibold text-gray-800 flex items-center space-x-2">
+              <MapPin size={18} className="text-timesnow-red" />
+              <span>{t.mpWeather}</span>
+            </h3>
+            <button 
+              onClick={() => window.location.reload()}
+              className="p-1 hover:bg-gray-100 rounded transition-colors"
+              title={t.refresh}
+            >
+              <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </button>
+          </div>
+          
+          {/* City Selector */}
+          <div className="mb-3 sm:mb-4">
+            <select
+              value={selectedCity}
+              onChange={(e) => setSelectedCity(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-timesnow-red focus:border-transparent"
+            >
+              {mpCities.map((city) => (
+                <option key={city.name} value={city.name}>
+                  {isHindi ? city.nameHindi : city.name}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Current Weather Display */}
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-3 sm:p-4">
+            <div className="flex items-center justify-between mb-2 sm:mb-3">
+              <div className="flex items-center space-x-2">
+                <span className="text-lg sm:text-xl font-bold text-gray-800">
+                  {isHindi ? selectedCityData.nameHindi : selectedCityData.name}
+                </span>
+                {getWeatherIcon(selectedCityData.condition)}
+              </div>
+              <div className="text-right">
+                <div className="text-2xl sm:text-3xl font-bold text-gray-800">
+                  {selectedCityData.temp}°C
+                </div>
+                <div className="text-xs sm:text-sm text-gray-600">
+                  {getWeatherConditionText(selectedCityData.condition)}
+                </div>
+              </div>
+            </div>
+
+            {/* Weather Details */}
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm">
+              <div className="flex items-center space-x-2 text-gray-600">
+                <Droplets size={16} className="text-blue-500" />
+                <span>{selectedCityData.humidity}%</span>
+              </div>
+              <div className="flex items-center space-x-2 text-gray-600">
+                <Wind size={16} className="text-gray-500" />
+                <span>{selectedCityData.wind} km/h</span>
+              </div>
+            </div>
+          </div>
+
+          {/* 5-Day Forecast */}
+          <div className="mt-3 sm:mt-4">
+            <h4 className="text-xs sm:text-sm font-medium text-gray-600 mb-2">
+              {t.fiveDayForecast}
+            </h4>
+            <div className="grid grid-cols-5 gap-2 sm:gap-3 text-xs sm:text-sm">
+              {forecastData.map((day, index) => (
+                <div key={index} className="flex flex-col items-center">
+                  <span className="text-xs sm:text-sm font-medium text-gray-800">
+                    {day.day}
+                  </span>
+                  <div className="flex items-center space-x-1">
+                    {getWeatherIcon(day.condition)}
+                    <span className="text-xs sm:text-sm font-semibold">
+                      {day.temp}°C
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Other Cities Quick View */}
+          <div className="mt-3 sm:mt-4">
+            <h4 className="text-xs sm:text-sm font-medium text-gray-600 mb-2">
+              {t.otherCities}
+            </h4>
+            <div className="space-y-2">
+              {mpCities.slice(0, 5).map((city) => (
+                <div 
+                  key={city.name}
+                  className={`flex items-center justify-between p-2 rounded-lg cursor-pointer transition-colors ${
+                    selectedCity === city.name 
+                      ? 'bg-timesnow-red text-white' 
+                      : 'hover:bg-gray-50'
+                  }`}
+                  onClick={() => setSelectedCity(city.name)}
+                >
+                  <div className="flex items-center space-x-2">
+                    {getWeatherIcon(city.condition)}
+                    <span className="text-xs sm:text-sm font-medium">
+                      {isHindi ? city.nameHindi : city.name}
+                    </span>
+                  </div>
+                  <span className={`text-xs sm:text-sm font-semibold ${
+                    selectedCity === city.name ? 'text-white' : 'text-gray-800'
+                  }`}>
+                    {city.temp}°C
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Last Updated */}
+          <div className="mt-3 sm:mt-4 pt-2 border-t border-gray-100">
+            <div className="flex items-center justify-between text-xs text-gray-500">
+              <span>{t.lastUpdated}</span>
+              <span>{new Date().toLocaleTimeString('en-IN', { 
+                hour: '2-digit', 
+                minute: '2-digit',
+                hour12: true 
+              })}</span>
+            </div>
+          </div>
+        </div>
+
         {/* Trending Stories - Mobile Responsive */}
         <div className="bg-white rounded-lg shadow-sm mobile-p">
           <div className="flex items-center space-x-2 mb-3 sm:mb-4">
@@ -154,21 +374,6 @@ const Sidebar = () => {
           </p>
           <div className="w-full h-20 sm:h-24 md:h-32 bg-white/20 rounded-lg flex items-center justify-center">
             <span className="text-white/70 text-xs sm:text-sm">{t.adSpace}</span>
-          </div>
-        </div>
-
-        {/* Weather Widget - Mobile Responsive */}
-        <div className="bg-white rounded-lg shadow-sm mobile-p">
-          <h3 className="mobile-text-sm sm:mobile-text-base md:mobile-text-lg font-semibold text-gray-800 mb-3 sm:mb-4">
-            {t.weather}
-          </h3>
-          <div className="text-center">
-            <div className="text-3xl sm:text-4xl mb-2">🌤️</div>
-            <div className="mobile-text-lg sm:mobile-text-xl md:mobile-text-2xl font-bold text-gray-800">28°C</div>
-            <div className="mobile-text-xs sm:mobile-text-sm text-gray-600">{t.newDelhi}</div>
-            <div className="mobile-text-xs sm:mobile-text-sm text-gray-500 mt-1 sm:mt-2">
-              {t.partlyCloudy}
-            </div>
           </div>
         </div>
 

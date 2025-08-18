@@ -6,6 +6,7 @@ export const translations = {
     searchPlaceholder: "Search news...",
     
     // Navigation
+    home: "Home",
     india: "India",
     world: "World",
     entertainment: "Entertainment",
@@ -66,6 +67,20 @@ export const translations = {
     subscribeNewsletter: "Subscribe Newsletter",
     contactUs: "Contact Us",
     advertiseWithUs: "Advertise with Us",
+    
+    // Weather
+    mpWeather: "MP Weather",
+    otherCities: "Other Cities",
+    humidity: "Humidity",
+    windSpeed: "Wind Speed",
+    sunny: "Sunny",
+    partlyCloudy: "Partly Cloudy",
+    cloudy: "Cloudy",
+    rainy: "Rainy",
+    stormy: "Stormy",
+    fiveDayForecast: "5-Day Forecast",
+    lastUpdated: "Last Updated",
+    refresh: "Refresh",
     
     // Footer
     aboutUs: "About Us",
@@ -210,6 +225,7 @@ export const translations = {
     searchPlaceholder: "समाचार खोजें...",
     
     // Navigation
+    home: "होम",
     india: "भारत",
     world: "विश्व",
     entertainment: "मनोरंजन",
@@ -270,6 +286,20 @@ export const translations = {
     subscribeNewsletter: "न्यूजलेटर सब्सक्राइब करें",
     contactUs: "संपर्क करें",
     advertiseWithUs: "हमारे साथ विज्ञापन करें",
+    
+    // Weather
+    mpWeather: "MP मौसम",
+    otherCities: "अन्य शहर",
+    humidity: "आर्द्रता",
+    windSpeed: "वायु वेग",
+    sunny: "सूरजमुखी",
+    partlyCloudy: "आंशिक रूप से बादल",
+    cloudy: "बादल",
+    rainy: "बारिश",
+    stormy: "गंभीर वर्षा",
+    fiveDayForecast: "5-दिन का भविष्यवाणी",
+    lastUpdated: "अंतिम अपडेट",
+    refresh: "रीफ्रेश",
     
     // Footer
     aboutUs: "हमारे बारे में",

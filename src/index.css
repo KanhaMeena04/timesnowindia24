@@ -30,67 +30,71 @@
     @apply bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-all duration-200 cursor-pointer;
   }
 
-  /* Mobile-first responsive utilities */
+  /* Enhanced Mobile-first responsive utilities */
   .mobile-container {
-    @apply px-3 sm:px-4 md:px-6 lg:px-8;
+    @apply px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12;
   }
 
-  .mobile-text-sm {
+  .mobile-text-xs {
     @apply text-xs sm:text-sm md:text-base;
   }
 
-  .mobile-text-base {
+  .mobile-text-sm {
     @apply text-sm sm:text-base md:text-lg;
   }
 
-  .mobile-text-lg {
+  .mobile-text-base {
     @apply text-base sm:text-lg md:text-xl;
   }
 
-  .mobile-text-xl {
+  .mobile-text-lg {
     @apply text-lg sm:text-xl md:text-2xl;
   }
 
-  .mobile-text-2xl {
+  .mobile-text-xl {
     @apply text-xl sm:text-2xl md:text-3xl;
   }
 
-  .mobile-text-3xl {
+  .mobile-text-2xl {
     @apply text-2xl sm:text-3xl md:text-4xl;
   }
 
-  .mobile-text-4xl {
+  .mobile-text-3xl {
     @apply text-3xl sm:text-4xl md:text-5xl;
   }
 
-  /* Mobile-specific spacing */
+  .mobile-text-4xl {
+    @apply text-4xl sm:text-5xl md:text-6xl;
+  }
+
+  /* Enhanced Mobile-specific spacing */
   .mobile-p {
-    @apply p-3 sm:p-4 md:p-6;
+    @apply p-3 sm:p-4 md:p-6 lg:p-8;
   }
 
   .mobile-py {
-    @apply py-3 sm:py-4 md:py-6;
+    @apply py-3 sm:py-4 md:py-6 lg:py-8;
   }
 
   .mobile-px {
-    @apply px-3 sm:px-4 md:px-6;
+    @apply px-3 sm:px-4 md:px-6 lg:px-8;
   }
 
   .mobile-m {
-    @apply m-3 sm:m-4 md:m-6;
+    @apply m-3 sm:m-4 md:m-6 lg:m-8;
   }
 
   .mobile-my {
-    @apply my-3 sm:my-4 md:my-6;
+    @apply my-3 sm:my-4 md:my-6 lg:my-8;
   }
 
   .mobile-mx {
-    @apply mx-3 sm:mx-4 md:mx-6;
+    @apply mx-3 sm:mx-4 md:mx-6 lg:mx-8;
   }
 
-  /* Mobile grid layouts */
+  /* Enhanced Mobile grid layouts */
   .mobile-grid {
-    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5;
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6;
   }
 
   .mobile-grid-2 {
@@ -105,7 +109,11 @@
     @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
   }
 
-  /* Mobile flex layouts */
+  .mobile-grid-5 {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5;
+  }
+
+  /* Enhanced Mobile flex layouts */
   .mobile-flex-col {
     @apply flex flex-col sm:flex-row;
   }
@@ -122,74 +130,82 @@
     @apply flex flex-col sm:flex-row items-start sm:items-center justify-start sm:justify-between gap-2 sm:gap-0;
   }
 
-  /* Mobile spacing */
+  .mobile-flex-start {
+    @apply flex flex-col sm:flex-row items-start gap-2 sm:gap-4;
+  }
+
+  .mobile-flex-end {
+    @apply flex flex-col sm:flex-row items-end gap-2 sm:gap-4;
+  }
+
+  /* Enhanced Mobile spacing */
   .mobile-gap {
-    @apply gap-3 sm:gap-4 md:gap-6;
+    @apply gap-3 sm:gap-4 md:gap-6 lg:gap-8;
   }
 
   .mobile-gap-y {
-    @apply gap-y-3 sm:gap-y-4 md:gap-y-6;
+    @apply gap-y-3 sm:gap-y-4 md:gap-y-6 lg:gap-y-8;
   }
 
   .mobile-gap-x {
-    @apply gap-x-3 sm:gap-x-4 md:gap-x-6;
+    @apply gap-x-3 sm:gap-x-4 md:gap-x-6 lg:gap-x-8;
   }
 
-  /* Mobile margins and paddings */
+  /* Enhanced Mobile margins and paddings */
   .mobile-mb {
-    @apply mb-3 sm:mb-4 md:mb-6;
+    @apply mb-3 sm:mb-4 md:mb-6 lg:mb-8;
   }
 
   .mobile-mt {
-    @apply mt-3 sm:mt-4 md:mt-6;
+    @apply mt-3 sm:mt-4 md:mt-6 lg:mt-8;
   }
 
   .mobile-ml {
-    @apply ml-3 sm:ml-4 md:ml-6;
+    @apply ml-3 sm:ml-4 md:ml-6 lg:ml-8;
   }
 
   .mobile-mr {
-    @apply mr-3 sm:mr-4 md:mr-6;
+    @apply mr-3 sm:mr-4 md:mr-6 lg:mr-8;
   }
 
   .mobile-pb {
-    @apply pb-3 sm:pb-4 md:pb-6;
+    @apply pb-3 sm:pb-4 md:pb-6 lg:pb-8;
   }
 
   .mobile-pt {
-    @apply pt-3 sm:pt-4 md:pt-6;
+    @apply pt-3 sm:pt-4 md:pt-6 lg:pt-8;
   }
 
   .mobile-pl {
-    @apply pl-3 sm:pl-4 md:pl-6;
+    @apply pl-3 sm:pl-4 md:pl-6 lg:pl-8;
   }
 
   .mobile-pr {
-    @apply pr-3 sm:pr-4 md:pr-6;
+    @apply pr-3 sm:pr-4 md:pr-6 lg:pr-8;
   }
 
-  /* Mobile-specific component styles */
+  /* Enhanced Mobile-specific component styles */
   .mobile-header {
-    @apply px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4;
+    @apply px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 lg:px-8 lg:py-6;
   }
 
   .mobile-hero {
-    @apply h-64 sm:h-80 md:h-96 lg:h-[500px];
+    @apply h-64 sm:h-80 md:h-96 lg:h-[500px] xl:h-[600px];
   }
 
   .mobile-news-item {
-    @apply p-3 sm:p-4 md:p-6;
+    @apply p-3 sm:p-4 md:p-6 lg:p-8;
   }
 
   .mobile-button {
-    @apply px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 text-sm sm:text-base;
+    @apply px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 lg:px-8 lg:py-4 text-sm sm:text-base md:text-lg;
   }
 
   .mobile-modal {
-    @apply p-3 sm:p-4 md:p-6 max-w-full sm:max-w-lg md:max-w-2xl lg:max-w-4xl;
+    @apply p-3 sm:p-4 md:p-6 lg:p-8 max-w-full sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl;
   }
 
-  /* Mobile navigation */
+  /* Enhanced Mobile navigation */
   .mobile-nav {
     @apply fixed inset-0 z-50 bg-white transform transition-transform duration-300 ease-in-out;
   }
@@ -202,1694 +218,117 @@
     @apply -translate-x-full;
   }
 
-  /* Mobile sidebar */
-  .mobile-sidebar {
-    @apply w-full sm:w-80 md:w-96;
-  }
-
-  /* Mobile carousel */
-  .mobile-carousel {
-    @apply relative w-full overflow-hidden;
-  }
-
-  .mobile-carousel-item {
-    @apply w-full flex-shrink-0;
-  }
-
-  /* Mobile responsive text */
-  .mobile-heading {
-    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold;
-  }
-
-  .mobile-subheading {
-    @apply text-base sm:text-lg md:text-xl font-semibold;
-  }
-
-  .mobile-body {
-    @apply text-sm sm:text-base md:text-lg;
-  }
-
-  .mobile-caption {
-    @apply text-xs sm:text-sm;
-  }
-
-  /* Mobile responsive images */
-  .mobile-image {
-    @apply w-full h-auto object-cover;
-  }
-
+  /* Enhanced Mobile image sizes */
   .mobile-image-small {
-    @apply w-16 h-12 sm:w-20 sm:h-16 md:w-24 md:h-20;
+    @apply w-16 h-12 sm:w-20 sm:h-16 md:w-24 md:h-20 lg:w-32 lg:h-24;
   }
 
   .mobile-image-medium {
-    @apply w-24 h-16 sm:w-32 sm:h-20 md:w-40 md:h-24;
+    @apply w-24 h-16 sm:w-32 sm:h-20 md:w-40 md:h-24 lg:w-48 lg:h-32;
   }
 
   .mobile-image-large {
-    @apply w-32 h-20 sm:w-40 sm:h-24 md:w-48 md:h-28;
+    @apply w-32 h-20 sm:w-40 sm:h-24 md:w-48 md:h-32 lg:w-56 lg:h-40;
   }
 
-  /* Mobile responsive buttons */
-  .mobile-btn-group {
-    @apply flex flex-col sm:flex-row gap-2 sm:gap-3;
+  .mobile-image-hero {
+    @apply w-full h-48 sm:h-64 md:h-80 lg:h-96 xl:h-[500px];
   }
 
+  /* Enhanced Mobile button stacks */
   .mobile-btn-stack {
-    @apply flex flex-col gap-2;
+    @apply flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2;
   }
 
-  .mobile-btn-row {
-    @apply flex flex-row gap-2 overflow-x-auto;
+  .mobile-btn-stack-reverse {
+    @apply flex flex-col-reverse space-y-reverse space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2;
   }
 
-  /* Mobile responsive cards */
-  .mobile-card {
-    @apply rounded-lg shadow-sm sm:shadow-md overflow-hidden;
-  }
-
-  .mobile-card-header {
-    @apply p-3 sm:p-4 md:p-6;
-  }
-
-  .mobile-card-body {
-    @apply p-3 sm:p-4 md:p-6;
-  }
-
-  .mobile-card-footer {
-    @apply p-3 sm:p-4 md:p-6;
-  }
-
-  /* Mobile responsive forms */
-  .mobile-form {
-    @apply space-y-3 sm:space-y-4 md:space-y-6;
+  /* Enhanced Mobile form elements */
+  .mobile-form-group {
+    @apply space-y-2 sm:space-y-3 md:space-y-4;
   }
 
   .mobile-input {
-    @apply w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base;
+    @apply w-full px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-sm sm:text-base md:text-lg;
   }
 
   .mobile-label {
-    @apply text-sm sm:text-base font-medium;
+    @apply text-sm sm:text-base md:text-lg font-medium;
   }
 
-  /* Mobile responsive tables */
-  .mobile-table {
-    @apply w-full overflow-x-auto;
+  /* Enhanced Mobile card layouts */
+  .mobile-card-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 md:gap-6 lg:gap-8;
   }
 
-  .mobile-table-cell {
-    @apply px-2 py-2 sm:px-3 sm:py-3 text-sm sm:text-base;
+  .mobile-card-stack {
+    @apply space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8;
   }
 
-  /* Mobile responsive lists */
-  .mobile-list {
-    @apply space-y-2 sm:space-y-3 md:space-y-4;
+  /* Enhanced Mobile sidebar */
+  .mobile-sidebar {
+    @apply fixed inset-y-0 left-0 z-40 w-64 sm:w-72 md:w-80 bg-white border-r border-gray-200 shadow-lg transform transition-transform duration-300 ease-in-out;
   }
 
-  .mobile-list-item {
-    @apply p-2 sm:p-3 md:p-4;
-  }
-
-  /* Mobile responsive navigation */
-  .mobile-menu {
-    @apply fixed top-0 left-0 w-full h-full bg-white z-50 transform transition-transform duration-300 ease-in-out;
-  }
-
-  .mobile-menu-open {
+  .mobile-sidebar-open {
     @apply translate-x-0;
   }
 
-  .mobile-menu-closed {
+  .mobile-sidebar-closed {
     @apply -translate-x-full;
   }
 
-  /* Mobile responsive modals */
+  /* Enhanced Mobile overlay */
   .mobile-overlay {
-    @apply fixed inset-0 bg-black bg-opacity-50 z-40;
+    @apply fixed inset-0 z-30 bg-black bg-opacity-50 transition-opacity duration-300;
   }
 
-  .mobile-modal-content {
-    @apply fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6;
+  /* Enhanced Mobile text alignment */
+  .mobile-text-center {
+    @apply text-center sm:text-left md:text-center;
   }
 
-  .mobile-modal-body {
-    @apply bg-white rounded-lg max-h-full overflow-y-auto w-full max-w-full sm:max-w-lg md:max-w-2xl lg:max-w-4xl;
+  .mobile-text-left {
+    @apply text-left;
   }
 
-  /* Mobile responsive utilities */
-  .mobile-hidden {
-    @apply hidden sm:block;
+  .mobile-text-right {
+    @apply text-right;
   }
 
-  .mobile-visible {
-    @apply block sm:hidden;
+  /* Enhanced Mobile spacing utilities */
+  .mobile-section {
+    @apply py-8 sm:py-12 md:py-16 lg:py-20;
   }
 
-  .mobile-block {
-    @apply block;
+  .mobile-section-sm {
+    @apply py-4 sm:py-6 md:py-8 lg:py-12;
   }
 
-  .mobile-inline {
-    @apply inline;
+  .mobile-section-lg {
+    @apply py-12 sm:py-16 md:py-20 lg:py-24;
   }
 
-  .mobile-inline-block {
-    @apply inline-block;
+  /* Enhanced Mobile container */
+  .mobile-container-fluid {
+    @apply w-full px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12;
   }
 
-  .mobile-flex {
-    @apply flex;
+  .mobile-container-sm {
+    @apply max-w-4xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8;
   }
 
-  .mobile-inline-flex {
-    @apply inline-flex;
+  .mobile-container-md {
+    @apply max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12;
   }
 
-  /* Mobile responsive spacing scale */
-  .mobile-space-1 {
-    @apply space-y-1 sm:space-y-2 md:space-y-3;
+  .mobile-container-lg {
+    @apply max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12;
   }
 
-  .mobile-space-2 {
-    @apply space-y-2 sm:space-y-3 md:space-y-4;
-  }
-
-  .mobile-space-3 {
-    @apply space-y-3 sm:space-y-4 md:space-y-6;
-  }
-
-  .mobile-space-4 {
-    @apply space-y-4 sm:space-y-6 md:space-y-8;
-  }
-
-  .mobile-space-5 {
-    @apply space-y-5 sm:space-y-6 md:space-y-8;
-  }
-
-  .mobile-space-6 {
-    @apply space-y-6 sm:space-y-8 md:space-y-10;
-  }
-
-  .mobile-space-8 {
-    @apply space-y-8 sm:space-y-10 md:space-y-12;
-  }
-
-  .mobile-space-10 {
-    @apply space-y-10 sm:space-y-12 md:space-y-16;
-  }
-
-  .mobile-space-12 {
-    @apply space-y-12 sm:space-y-16 md:space-y-20;
-  }
-
-  .mobile-space-16 {
-    @apply space-y-16 sm:space-y-20 md:space-y-24;
-  }
-
-  .mobile-space-20 {
-    @apply space-y-20 sm:space-y-24 md:space-y-32;
-  }
-
-  /* Mobile responsive width and height */
-  .mobile-w-full {
-    @apply w-full;
-  }
-
-  .mobile-w-auto {
-    @apply w-auto;
-  }
-
-  .mobile-h-full {
-    @apply h-full;
-  }
-
-  .mobile-h-auto {
-    @apply h-auto;
-  }
-
-  .mobile-min-h-screen {
-    @apply min-h-screen;
-  }
-
-  .mobile-min-h-full {
-    @apply min-h-full;
-  }
-
-  /* Mobile responsive positioning */
-  .mobile-relative {
-    @apply relative;
-  }
-
-  .mobile-absolute {
-    @apply absolute;
-  }
-
-  .mobile-fixed {
-    @apply fixed;
-  }
-
-  .mobile-sticky {
-    @apply sticky;
-  }
-
-  /* Mobile responsive overflow */
-  .mobile-overflow-hidden {
-    @apply overflow-hidden;
-  }
-
-  .mobile-overflow-auto {
-    @apply overflow-auto;
-  }
-
-  .mobile-overflow-scroll {
-    @apply overflow-scroll;
-  }
-
-  .mobile-overflow-x-auto {
-    @apply overflow-x-auto;
-  }
-
-  .mobile-overflow-y-auto {
-    @apply overflow-y-auto;
-  }
-
-  /* Mobile responsive z-index */
-  .mobile-z-0 {
-    @apply z-0;
-  }
-
-  .mobile-z-10 {
-    @apply z-10;
-  }
-
-  .mobile-z-20 {
-    @apply z-20;
-  }
-
-  .mobile-z-30 {
-    @apply z-30;
-  }
-
-  .mobile-z-40 {
-    @apply z-40;
-  }
-
-  .mobile-z-50 {
-    @apply z-50;
-  }
-
-  /* Mobile responsive transitions */
-  .mobile-transition {
-    @apply transition-all duration-300 ease-in-out;
-  }
-
-  .mobile-transition-fast {
-    @apply transition-all duration-150 ease-in-out;
-  }
-
-  .mobile-transition-slow {
-    @apply transition-all duration-500 ease-in-out;
-  }
-
-  /* Mobile responsive transforms */
-  .mobile-transform {
-    @apply transform;
-  }
-
-  .mobile-scale-95 {
-    @apply scale-95;
-  }
-
-  .mobile-scale-100 {
-    @apply scale-100;
-  }
-
-  .mobile-scale-105 {
-    @apply scale-105;
-  }
-
-  .mobile-scale-110 {
-    @apply scale-110;
-  }
-
-  /* Mobile responsive shadows */
-  .mobile-shadow-none {
-    @apply shadow-none;
-  }
-
-  .mobile-shadow-sm {
-    @apply shadow-sm;
-  }
-
-  .mobile-shadow {
-    @apply shadow;
-  }
-
-  .mobile-shadow-md {
-    @apply shadow-md;
-  }
-
-  .mobile-shadow-lg {
-    @apply shadow-lg;
-  }
-
-  .mobile-shadow-xl {
-    @apply shadow-xl;
-  }
-
-  .mobile-shadow-2xl {
-    @apply shadow-2xl;
-  }
-
-  /* Mobile responsive borders */
-  .mobile-border {
-    @apply border;
-  }
-
-  .mobile-border-0 {
-    @apply border-0;
-  }
-
-  .mobile-border-2 {
-    @apply border-2;
-  }
-
-  .mobile-border-4 {
-    @apply border-4;
-  }
-
-  .mobile-border-8 {
-    @apply border-8;
-  }
-
-  /* Mobile responsive rounded corners */
-  .mobile-rounded-none {
-    @apply rounded-none;
-  }
-
-  .mobile-rounded-sm {
-    @apply rounded-sm;
-  }
-
-  .mobile-rounded {
-    @apply rounded;
-  }
-
-  .mobile-rounded-md {
-    @apply rounded-md;
-  }
-
-  .mobile-rounded-lg {
-    @apply rounded-lg;
-  }
-
-  .mobile-rounded-xl {
-    @apply rounded-xl;
-  }
-
-  .mobile-rounded-2xl {
-    @apply rounded-2xl;
-  }
-
-  .mobile-rounded-full {
-    @apply rounded-full;
-  }
-
-  /* Mobile responsive opacity */
-  .mobile-opacity-0 {
-    @apply opacity-0;
-  }
-
-  .mobile-opacity-25 {
-    @apply opacity-25;
-  }
-
-  .mobile-opacity-50 {
-    @apply opacity-50;
-  }
-
-  .mobile-opacity-75 {
-    @apply opacity-75;
-  }
-
-  .mobile-opacity-100 {
-    @apply opacity-100;
-  }
-
-  /* Mobile responsive visibility */
-  .mobile-visible {
-    @apply visible;
-  }
-
-  .mobile-invisible {
-    @apply invisible;
-  }
-
-  .mobile-collapse {
-    @apply collapse;
-  }
-
-  .mobile-table {
-    @apply table;
-  }
-
-  .mobile-table-row {
-    @apply table-row;
-  }
-
-  .mobile-table-cell {
-    @apply table-cell;
-  }
-
-  .mobile-table-column {
-    @apply table-column;
-  }
-
-  .mobile-table-column-group {
-    @apply table-column-group;
-  }
-
-  .mobile-table-footer-group {
-    @apply table-footer-group;
-  }
-
-  .mobile-table-header-group {
-    @apply table-header-group;
-  }
-
-  .mobile-table-row-group {
-    @apply table-row-group;
-  }
-
-  .mobile-table-caption {
-    @apply table-caption;
-  }
-
-  /* Mobile responsive display */
-  .mobile-block {
-    @apply block;
-  }
-
-  .mobile-inline-block {
-    @apply inline-block;
-  }
-
-  .mobile-inline {
-    @apply inline;
-  }
-
-  .mobile-flex {
-    @apply flex;
-  }
-
-  .mobile-inline-flex {
-    @apply inline-flex;
-  }
-
-  .mobile-table {
-    @apply table;
-  }
-
-  .mobile-grid {
-    @apply grid;
-  }
-
-  .mobile-contents {
-    @apply contents;
-  }
-
-  .mobile-list-item {
-    @apply list-item;
-  }
-
-  .mobile-hidden {
-    @apply hidden;
-  }
-
-  /* Mobile responsive flexbox */
-  .mobile-flex-row {
-    @apply flex-row;
-  }
-
-  .mobile-flex-col {
-    @apply flex-col;
-  }
-
-  .mobile-flex-row-reverse {
-    @apply flex-row-reverse;
-  }
-
-  .mobile-flex-col-reverse {
-    @apply flex-col-reverse;
-  }
-
-  .mobile-flex-wrap {
-    @apply flex-wrap;
-  }
-
-  .mobile-flex-nowrap {
-    @apply flex-nowrap;
-  }
-
-  .mobile-flex-wrap-reverse {
-    @apply flex-wrap-reverse;
-  }
-
-  .mobile-items-start {
-    @apply items-start;
-  }
-
-  .mobile-items-end {
-    @apply items-end;
-  }
-
-  .mobile-items-center {
-    @apply items-center;
-  }
-
-  .mobile-items-baseline {
-    @apply items-baseline;
-  }
-
-  .mobile-items-stretch {
-    @apply items-stretch;
-  }
-
-  .mobile-justify-start {
-    @apply justify-start;
-  }
-
-  .mobile-justify-end {
-    @apply justify-end;
-  }
-
-  .mobile-justify-center {
-    @apply justify-center;
-  }
-
-  .mobile-justify-between {
-    @apply justify-between;
-  }
-
-  .mobile-justify-around {
-    @apply justify-around;
-  }
-
-  .mobile-justify-evenly {
-    @apply justify-evenly;
-  }
-
-  .mobile-content-start {
-    @apply content-start;
-  }
-
-  .mobile-content-end {
-    @apply content-end;
-  }
-
-  .mobile-content-center {
-    @apply content-center;
-  }
-
-  .mobile-content-between {
-    @apply content-between;
-  }
-
-  .mobile-content-around {
-    @apply content-around;
-  }
-
-  .mobile-content-evenly {
-    @apply content-evenly;
-  }
-
-  .mobile-content-stretch {
-    @apply content-stretch;
-  }
-
-  .mobile-self-auto {
-    @apply self-auto;
-  }
-
-  .mobile-self-start {
-    @apply self-start;
-  }
-
-  .mobile-self-end {
-    @apply self-end;
-  }
-
-  .mobile-self-center {
-    @apply self-center;
-  }
-
-  .mobile-self-stretch {
-    @apply self-stretch;
-  }
-
-  .mobile-order-1 {
-    @apply order-1;
-  }
-
-  .mobile-order-2 {
-    @apply order-2;
-  }
-
-  .mobile-order-3 {
-    @apply order-3;
-  }
-
-  .mobile-order-4 {
-    @apply order-4;
-  }
-
-  .mobile-order-5 {
-    @apply order-5;
-  }
-
-  .mobile-order-6 {
-    @apply order-6;
-  }
-
-  .mobile-order-7 {
-    @apply order-7;
-  }
-
-  .mobile-order-8 {
-    @apply order-8;
-  }
-
-  .mobile-order-9 {
-    @apply order-9;
-  }
-
-  .mobile-order-10 {
-    @apply order-10;
-  }
-
-  .mobile-order-11 {
-    @apply order-11;
-  }
-
-  .mobile-order-12 {
-    @apply order-12;
-  }
-
-  .mobile-order-first {
-    @apply order-first;
-  }
-
-  .mobile-order-last {
-    @apply order-last;
-  }
-
-  .mobile-order-none {
-    @apply order-none;
-  }
-
-  /* Mobile responsive grid */
-  .mobile-grid-cols-1 {
-    @apply grid-cols-1;
-  }
-
-  .mobile-grid-cols-2 {
-    @apply grid-cols-2;
-  }
-
-  .mobile-grid-cols-3 {
-    @apply grid-cols-3;
-  }
-
-  .mobile-grid-cols-4 {
-    @apply grid-cols-4;
-  }
-
-  .mobile-grid-cols-5 {
-    @apply grid-cols-5;
-  }
-
-  .mobile-grid-cols-6 {
-    @apply grid-cols-6;
-  }
-
-  .mobile-grid-cols-7 {
-    @apply grid-cols-7;
-  }
-
-  .mobile-grid-cols-8 {
-    @apply grid-cols-8;
-  }
-
-  .mobile-grid-cols-9 {
-    @apply grid-cols-9;
-  }
-
-  .mobile-grid-cols-10 {
-    @apply grid-cols-10;
-  }
-
-  .mobile-grid-cols-11 {
-    @apply grid-cols-11;
-  }
-
-  .mobile-grid-cols-12 {
-    @apply grid-cols-12;
-  }
-
-  .mobile-grid-cols-none {
-    @apply grid-cols-none;
-  }
-
-  .mobile-grid-rows-1 {
-    @apply grid-rows-1;
-  }
-
-  .mobile-grid-rows-2 {
-    @apply grid-rows-2;
-  }
-
-  .mobile-grid-rows-3 {
-    @apply grid-rows-3;
-  }
-
-  .mobile-grid-rows-4 {
-    @apply grid-rows-4;
-  }
-
-  .mobile-grid-rows-5 {
-    @apply grid-rows-5;
-  }
-
-  .mobile-grid-rows-6 {
-    @apply grid-rows-6;
-  }
-
-  .mobile-grid-rows-none {
-    @apply grid-rows-none;
-  }
-
-  /* Mobile responsive gap */
-  .mobile-gap-0 {
-    @apply gap-0;
-  }
-
-  .mobile-gap-1 {
-    @apply gap-1;
-  }
-
-  .mobile-gap-2 {
-    @apply gap-2;
-  }
-
-  .mobile-gap-3 {
-    @apply gap-3;
-  }
-
-  .mobile-gap-4 {
-    @apply gap-4;
-  }
-
-  .mobile-gap-5 {
-    @apply gap-5;
-  }
-
-  .mobile-gap-6 {
-    @apply gap-6;
-  }
-
-  .mobile-gap-8 {
-    @apply gap-8;
-  }
-
-  .mobile-gap-10 {
-    @apply gap-10;
-  }
-
-  .mobile-gap-12 {
-    @apply gap-12;
-  }
-
-  .mobile-gap-16 {
-    @apply gap-16;
-  }
-
-  .mobile-gap-20 {
-    @apply gap-20;
-  }
-
-  .mobile-gap-24 {
-    @apply gap-24;
-  }
-
-  .mobile-gap-32 {
-    @apply gap-32;
-  }
-
-  .mobile-gap-40 {
-    @apply gap-40;
-  }
-
-  .mobile-gap-48 {
-    @apply gap-48;
-  }
-
-  .mobile-gap-56 {
-    @apply gap-56;
-  }
-
-  .mobile-gap-64 {
-    @apply gap-64;
-  }
-
-  .mobile-gap-px {
-    @apply gap-px;
-  }
-
-  .mobile-gap-0\.5 {
-    @apply gap-0\.5;
-  }
-
-  .mobile-gap-1\.5 {
-    @apply gap-1\.5;
-  }
-
-  .mobile-gap-2\.5 {
-    @apply gap-2\.5;
-  }
-
-  .mobile-gap-3\.5 {
-    @apply gap-3\.5;
-  }
-
-  /* Mobile responsive padding */
-  .mobile-p-0 {
-    @apply p-0;
-  }
-
-  .mobile-p-1 {
-    @apply p-1;
-  }
-
-  .mobile-p-2 {
-    @apply p-2;
-  }
-
-  .mobile-p-3 {
-    @apply p-3;
-  }
-
-  .mobile-p-4 {
-    @apply p-4;
-  }
-
-  .mobile-p-5 {
-    @apply p-5;
-  }
-
-  .mobile-p-6 {
-    @apply p-6;
-  }
-
-  .mobile-p-8 {
-    @apply p-8;
-  }
-
-  .mobile-p-10 {
-    @apply p-10;
-  }
-
-  .mobile-p-12 {
-    @apply p-12;
-  }
-
-  .mobile-p-16 {
-    @apply p-16;
-  }
-
-  .mobile-p-20 {
-    @apply p-20;
-  }
-
-  .mobile-p-24 {
-    @apply p-24;
-  }
-
-  .mobile-p-32 {
-    @apply p-32;
-  }
-
-  .mobile-p-40 {
-    @apply p-40;
-  }
-
-  .mobile-p-48 {
-    @apply p-48;
-  }
-
-  .mobile-p-56 {
-    @apply p-56;
-  }
-
-  .mobile-p-64 {
-    @apply p-64;
-  }
-
-  .mobile-p-px {
-    @apply p-px;
-  }
-
-  .mobile-p-0\.5 {
-    @apply p-0\.5;
-  }
-
-  .mobile-p-1\.5 {
-    @apply p-1\.5;
-  }
-
-  .mobile-p-2\.5 {
-    @apply p-2\.5;
-  }
-
-  .mobile-p-3\.5 {
-    @apply p-3\.5;
-  }
-
-  /* Mobile responsive margin */
-  .mobile-m-0 {
-    @apply m-0;
-  }
-
-  .mobile-m-1 {
-    @apply m-1;
-  }
-
-  .mobile-m-2 {
-    @apply m-2;
-  }
-
-  .mobile-m-3 {
-    @apply m-3;
-  }
-
-  .mobile-m-4 {
-    @apply m-4;
-  }
-
-  .mobile-m-5 {
-    @apply m-5;
-  }
-
-  .mobile-m-6 {
-    @apply m-6;
-  }
-
-  .mobile-m-8 {
-    @apply m-8;
-  }
-
-  .mobile-m-10 {
-    @apply m-10;
-  }
-
-  .mobile-m-12 {
-    @apply m-12;
-  }
-
-  .mobile-m-16 {
-    @apply m-16;
-  }
-
-  .mobile-m-20 {
-    @apply m-20;
-  }
-
-  .mobile-m-24 {
-    @apply m-24;
-  }
-
-  .mobile-m-32 {
-    @apply m-32;
-  }
-
-  .mobile-m-40 {
-    @apply m-40;
-  }
-
-  .mobile-m-48 {
-    @apply m-48;
-  }
-
-  .mobile-m-56 {
-    @apply m-56;
-  }
-
-  .mobile-m-64 {
-    @apply m-64;
-  }
-
-  .mobile-m-auto {
-    @apply m-auto;
-  }
-
-  .mobile-m-px {
-    @apply m-px;
-  }
-
-  .mobile-m-0\.5 {
-    @apply m-0\.5;
-  }
-
-  .mobile-m-1\.5 {
-    @apply m-1\.5;
-  }
-
-  .mobile-m-2\.5 {
-    @apply m-2\.5;
-  }
-
-  .mobile-m-3\.5 {
-    @apply m-3\.5;
-  }
-
-  /* Mobile responsive width */
-  .mobile-w-0 {
-    @apply w-0;
-  }
-
-  .mobile-w-1 {
-    @apply w-1;
-  }
-
-  .mobile-w-2 {
-    @apply w-2;
-  }
-
-  .mobile-w-3 {
-    @apply w-3;
-  }
-
-  .mobile-w-4 {
-    @apply w-4;
-  }
-
-  .mobile-w-5 {
-    @apply w-5;
-  }
-
-  .mobile-w-6 {
-    @apply w-6;
-  }
-
-  .mobile-w-8 {
-    @apply w-8;
-  }
-
-  .mobile-w-10 {
-    @apply w-10;
-  }
-
-  .mobile-w-12 {
-    @apply w-12;
-  }
-
-  .mobile-w-16 {
-    @apply w-16;
-  }
-
-  .mobile-w-20 {
-    @apply w-20;
-  }
-
-  .mobile-w-24 {
-    @apply w-24;
-  }
-
-  .mobile-w-32 {
-    @apply w-32;
-  }
-
-  .mobile-w-40 {
-    @apply w-40;
-  }
-
-  .mobile-w-48 {
-    @apply w-48;
-  }
-
-  .mobile-w-56 {
-    @apply w-56;
-  }
-
-  .mobile-w-64 {
-    @apply w-64;
-  }
-
-  .mobile-w-auto {
-    @apply w-auto;
-  }
-
-  .mobile-w-px {
-    @apply w-px;
-  }
-
-  .mobile-w-0\.5 {
-    @apply w-0\.5;
-  }
-
-  .mobile-w-1\.5 {
-    @apply w-1\.5;
-  }
-
-  .mobile-w-2\.5 {
-    @apply w-2\.5;
-  }
-
-  .mobile-w-3\.5 {
-    @apply w-3\.5;
-  }
-
-  .mobile-w-1\/2 {
-    @apply w-1\/2;
-  }
-
-  .mobile-w-1\/3 {
-    @apply w-1\/3;
-  }
-
-  .mobile-w-2\/3 {
-    @apply w-2\/3;
-  }
-
-  .mobile-w-1\/4 {
-    @apply w-1\/4;
-  }
-
-  .mobile-w-2\/4 {
-    @apply w-2\/4;
-  }
-
-  .mobile-w-3\/4 {
-    @apply w-3\/4;
-  }
-
-  .mobile-w-1\/5 {
-    @apply w-1\/5;
-  }
-
-  .mobile-w-2\/5 {
-    @apply w-2\/5;
-  }
-
-  .mobile-w-3\/5 {
-    @apply w-3\/5;
-  }
-
-  .mobile-w-4\/5 {
-    @apply w-4\/5;
-  }
-
-  .mobile-w-1\/6 {
-    @apply w-1\/6;
-  }
-
-  .mobile-w-2\/6 {
-    @apply w-2\/6;
-  }
-
-  .mobile-w-3\/6 {
-    @apply w-3\/6;
-  }
-
-  .mobile-w-4\/6 {
-    @apply w-4\/6;
-  }
-
-  .mobile-w-5\/6 {
-    @apply w-5\/6;
-  }
-
-  .mobile-w-1\/12 {
-    @apply w-1\/12;
-  }
-
-  .mobile-w-2\/12 {
-    @apply w-2\/12;
-  }
-
-  .mobile-w-3\/12 {
-    @apply w-3\/12;
-  }
-
-  .mobile-w-4\/12 {
-    @apply w-4\/12;
-  }
-
-  .mobile-w-5\/12 {
-    @apply w-5\/12;
-  }
-
-  .mobile-w-6\/12 {
-    @apply w-6\/12;
-  }
-
-  .mobile-w-7\/12 {
-    @apply w-7\/12;
-  }
-
-  .mobile-w-8\/12 {
-    @apply w-8\/12;
-  }
-
-  .mobile-w-9\/12 {
-    @apply w-9\/12;
-  }
-
-  .mobile-w-10\/12 {
-    @apply w-10\/12;
-  }
-
-  .mobile-w-11\/12 {
-    @apply w-11\/12;
-  }
-
-  .mobile-w-full {
-    @apply w-full;
-  }
-
-  .mobile-w-screen {
-    @apply w-screen;
-  }
-
-  .mobile-w-min {
-    @apply w-min;
-  }
-
-  .mobile-w-max {
-    @apply w-max;
-  }
-
-  .mobile-w-fit {
-    @apply w-fit;
-  }
-
-  /* Mobile responsive height */
-  .mobile-h-0 {
-    @apply h-0;
-  }
-
-  .mobile-h-1 {
-    @apply h-1;
-  }
-
-  .mobile-h-2 {
-    @apply h-2;
-  }
-
-  .mobile-h-3 {
-    @apply h-3;
-  }
-
-  .mobile-h-4 {
-    @apply h-4;
-  }
-
-  .mobile-h-5 {
-    @apply h-5;
-  }
-
-  .mobile-h-6 {
-    @apply h-6;
-  }
-
-  .mobile-h-8 {
-    @apply h-8;
-  }
-
-  .mobile-h-10 {
-    @apply h-10;
-  }
-
-  .mobile-h-12 {
-    @apply h-12;
-  }
-
-  .mobile-h-16 {
-    @apply h-16;
-  }
-
-  .mobile-h-20 {
-    @apply h-20;
-  }
-
-  .mobile-h-24 {
-    @apply h-24;
-  }
-
-  .mobile-h-32 {
-    @apply h-32;
-  }
-
-  .mobile-h-40 {
-    @apply h-40;
-  }
-
-  .mobile-h-48 {
-    @apply h-48;
-  }
-
-  .mobile-h-56 {
-    @apply h-56;
-  }
-
-  .mobile-h-64 {
-    @apply h-64;
-  }
-
-  .mobile-h-auto {
-    @apply h-auto;
-  }
-
-  .mobile-h-px {
-    @apply h-px;
-  }
-
-  .mobile-h-0\.5 {
-    @apply h-0\.5;
-  }
-
-  .mobile-h-1\.5 {
-    @apply h-1\.5;
-  }
-
-  .mobile-h-2\.5 {
-    @apply h-2\.5;
-  }
-
-  .mobile-h-3\.5 {
-    @apply h-3\.5;
-  }
-
-  .mobile-h-1\/2 {
-    @apply h-1\/2;
-  }
-
-  .mobile-h-1\/3 {
-    @apply h-1\/3;
-  }
-
-  .mobile-h-2\/3 {
-    @apply h-2\/3;
-  }
-
-  .mobile-h-1\/4 {
-    @apply h-1\/4;
-  }
-
-  .mobile-h-2\/4 {
-    @apply h-2\/4;
-  }
-
-  .mobile-h-3\/4 {
-    @apply h-3\/4;
-  }
-
-  .mobile-h-1\/5 {
-    @apply h-1\/5;
-  }
-
-  .mobile-h-2\/5 {
-    @apply h-2\/5;
-  }
-
-  .mobile-h-3\/5 {
-    @apply h-3\/5;
-  }
-
-  .mobile-h-4\/5 {
-    @apply h-4\/5;
-  }
-
-  .mobile-h-1\/6 {
-    @apply h-1\/6;
-  }
-
-  .mobile-h-2\/6 {
-    @apply h-2\/6;
-  }
-
-  .mobile-h-3\/6 {
-    @apply h-3\/6;
-  }
-
-  .mobile-h-4\/6 {
-    @apply h-4\/6;
-  }
-
-  .mobile-h-5\/6 {
-    @apply h-5\/6;
-  }
-
-  .mobile-h-full {
-    @apply h-full;
-  }
-
-  .mobile-h-screen {
-    @apply h-screen;
-  }
-
-  .mobile-h-min {
-    @apply h-min;
-  }
-
-  .mobile-h-max {
-    @apply h-max;
-  }
-
-  .mobile-h-fit {
-    @apply h-fit;
-  }
-
-  /* Mobile responsive min-width and min-height */
-  .mobile-min-w-0 {
-    @apply min-w-0;
-  }
-
-  .mobile-min-w-full {
-    @apply min-w-full;
-  }
-
-  .mobile-min-w-min {
-    @apply min-w-min;
-  }
-
-  .mobile-min-w-max {
-    @apply min-w-max;
-  }
-
-  .mobile-min-w-fit {
-    @apply min-w-fit;
-  }
-
-  .mobile-min-h-0 {
-    @apply min-h-0;
-  }
-
-  .mobile-min-h-full {
-    @apply min-h-full;
-  }
-
-  .mobile-min-h-screen {
-    @apply min-h-screen;
-  }
-
-  .mobile-min-h-min {
-    @apply min-h-min;
-  }
-
-  .mobile-min-h-max {
-    @apply min-h-max;
-  }
-
-  .mobile-min-h-fit {
-    @apply min-h-fit;
-  }
-
-  /* Mobile responsive max-width and max-height */
-  .mobile-max-w-0 {
-    @apply max-w-0;
-  }
-
-  .mobile-max-w-xs {
-    @apply max-w-xs;
-  }
-
-  .mobile-max-w-sm {
-    @apply max-w-sm;
-  }
-
-  .mobile-max-w-md {
-    @apply max-w-md;
-  }
-
-  .mobile-max-w-lg {
-    @apply max-w-lg;
-  }
-
-  .mobile-max-w-xl {
-    @apply max-w-xl;
-  }
-
-  .mobile-max-w-2xl {
-    @apply max-w-2xl;
-  }
-
-  .mobile-max-w-3xl {
-    @apply max-w-3xl;
-  }
-
-  .mobile-max-w-4xl {
-    @apply max-w-4xl;
-  }
-
-  .mobile-max-w-5xl {
-    @apply max-w-5xl;
-  }
-
-  .mobile-max-w-6xl {
-    @apply max-w-6xl;
-  }
-
-  .mobile-max-w-7xl {
-    @apply max-w-7xl;
-  }
-
-  .mobile-max-w-full {
-    @apply max-w-full;
-  }
-
-  .mobile-max-w-min {
-    @apply max-w-min;
-  }
-
-  .mobile-max-w-max {
-    @apply max-w-max;
-  }
-
-  .mobile-max-w-fit {
-    @apply max-w-fit;
-  }
-
-  .mobile-max-w-prose {
-    @apply max-w-prose;
-  }
-
-  .mobile-max-w-screen-sm {
-    @apply max-w-screen-sm;
-  }
-
-  .mobile-max-w-screen-md {
-    @apply max-w-screen-md;
-  }
-
-  .mobile-max-w-screen-lg {
-    @apply max-w-screen-lg;
-  }
-
-  .mobile-max-w-screen-xl {
-    @apply max-w-screen-xl;
-  }
-
-  .mobile-max-w-screen-2xl {
-    @apply max-w-screen-2xl;
-  }
-
-  .mobile-max-h-0 {
-    @apply max-h-0;
-  }
-
-  .mobile-max-h-xs {
-    @apply max-h-xs;
-  }
-
-  .mobile-max-h-sm {
-    @apply max-h-sm;
-  }
-
-  .mobile-max-h-md {
-    @apply max-h-md;
-  }
-
-  .mobile-max-h-lg {
-    @apply max-h-lg;
-  }
-
-  .mobile-max-h-xl {
-    @apply max-h-xl;
-  }
-
-  .mobile-max-h-2xl {
-    @apply max-h-2xl;
-  }
-
-  .mobile-max-h-3xl {
-    @apply max-h-3xl;
-  }
-
-  .mobile-max-h-4xl {
-    @apply max-h-4xl;
-  }
-
-  .mobile-max-h-5xl {
-    @apply max-h-5xl;
-  }
-
-  .mobile-max-h-6xl {
-    @apply max-h-6xl;
-  }
-
-  .mobile-max-h-7xl {
-    @apply max-h-7xl;
-  }
-
-  .mobile-max-h-full {
-    @apply max-h-full;
-  }
-
-  .mobile-max-h-min {
-    @apply max-h-min;
-  }
-
-  .mobile-max-h-max {
-    @apply max-h-max;
-  }
-
-  .mobile-max-h-fit {
-    @apply max-h-fit;
-  }
-
-  .mobile-max-h-screen {
-    @apply max-h-screen;
-  }
-
-  .mobile-max-h-screen-sm {
-    @apply max-h-screen-sm;
-  }
-
-  .mobile-max-h-screen-md {
-    @apply max-h-screen-md;
-  }
-
-  .mobile-max-h-screen-lg {
-    @apply max-h-screen-lg;
-  }
-
-  .mobile-max-h-screen-xl {
-    @apply max-h-screen-xl;
-  }
-
-  .mobile-max-h-screen-2xl {
-    @apply max-h-screen-2xl;
+  .mobile-container-xl {
+    @apply max-w-full mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16;
   }
 }
 

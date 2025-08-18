@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Menu, X, Globe, Tv, Download, Search } from 'lucide-react'
+import { Menu, X, Globe, Tv, Download, Search, Home } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
 import logoImage from './logo.png'
@@ -11,6 +11,7 @@ const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   
   const t = translations[language] || translations['English']
+  const isHindi = language === 'Hindi'
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -104,6 +105,11 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
+            {/* Home Button */}
+            <Link to="/" className="text-gray-700 hover:text-timesnow-red transition-colors font-medium flex items-center space-x-1">
+              <Home size={18} />
+              <span>{t.home}</span>
+            </Link>
             <Link to="/india" className="text-gray-700 hover:text-timesnow-red transition-colors font-medium">
               {t.india}
             </Link>
@@ -155,6 +161,15 @@ const Header = () => {
           
           <nav className="px-4 py-4">
             <div className="space-y-4">
+              {/* Home Button - Mobile */}
+              <Link 
+                to="/" 
+                onClick={closeMobileMenu}
+                className="block py-3 text-lg font-medium text-gray-700 hover:text-timesnow-red transition-colors border-b border-gray-100 flex items-center space-x-2"
+              >
+                <Home size={20} />
+                <span>{t.home}</span>
+              </Link>
               <Link 
                 to="/india" 
                 onClick={closeMobileMenu}
@@ -204,45 +219,47 @@ const Header = () => {
               >
                 {t.lifestyle}
               </Link>
-            </div>
-          </nav>
 
-          {/* Mobile Quick Actions */}
-          <div className="px-4 py-4 bg-gray-50">
-            <div className="space-y-3">
-              <Link 
-                to="/live-tv" 
-                onClick={closeMobileMenu}
-                className="flex items-center space-x-3 py-3 text-gray-700 hover:text-timesnow-red transition-colors"
-              >
-                <Tv size={20} />
-                <span className="text-lg font-medium">{t.liveTV}</span>
-              </Link>
-              <Link 
-                to="/download-app" 
-                onClick={closeMobileMenu}
-                className="flex items-center space-x-3 py-3 text-gray-700 hover:text-timesnow-red transition-colors"
-              >
-                <Download size={20} />
-                <span className="text-lg font-medium">{t.downloadApp}</span>
-              </Link>
-              <div className="pt-3 border-t border-gray-200">
-                <button
-                  onClick={() => {
-                    toggleLanguage()
-                    closeMobileMenu()
-                  }}
-                  className="flex items-center space-x-3 py-3 text-gray-700 hover:text-timesnow-red transition-colors w-full"
-                >
-                  <Globe size={20} />
-                  <span className="text-lg font-medium">
-                    {language === 'Hindi' ? 'हिंदी में देखें' : 'View in Hindi'}
-                  </span>
-                </button>
+              {/* Mobile Quick Actions */}
+              <div className="pt-4 border-t border-gray-200">
+                <div className="space-y-3">
+                  <Link 
+                    to="/live-tv" 
+                    onClick={closeMobileMenu}
+                    className="flex items-center space-x-3 py-2 text-gray-700 hover:text-timesnow-red transition-colors"
+                  >
+                    <Tv size={20} />
+                    <span>{t.liveTV}</span>
+                  </Link>
+                  <Link 
+                    to="/download-app" 
+                    onClick={closeMobileMenu}
+                    className="flex items-center space-x-3 py-2 text-gray-700 hover:text-timesnow-red transition-colors"
+                  >
+                    <Download size={20} />
+                    <span>{t.downloadApp}</span>
+                  </Link>
+                  <Link 
+                    to="/contact-us" 
+                    onClick={closeMobileMenu}
+                    className="flex items-center space-x-3 py-2 text-gray-700 hover:text-timesnow-red transition-colors"
+                  >
+                    <span className="w-5 h-5 flex items-center justify-center text-sm font-bold text-gray-500">📞</span>
+                    <span>{t?.contactUs || 'Contact Us'}</span>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
+          </nav>
         </div>
+      )}
+
+      {/* Backdrop for mobile menu */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 z-40 lg:hidden bg-black/20 backdrop-blur-sm"
+          onClick={closeMobileMenu}
+        />
       )}
     </>
   )

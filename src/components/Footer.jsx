@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Facebook, Twitter, Instagram, Youtube, Linkedin, Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
+import { Facebook, Twitter, Instagram, Youtube, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
 
@@ -135,28 +135,38 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter & Language */}
+          {/* Utility Tools */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t?.newsletterLabel || 'Newsletter'}</h3>
-            <p className="text-gray-300 text-sm mb-4">{t?.stayUpdated || 'Stay Updated'}</p>
-            
-            <form className="mb-4">
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder={t?.emailPlaceholder || 'Enter your email'}
-                  className="flex-1 px-3 py-2 bg-gray-700 text-white placeholder-gray-400 rounded-l-md focus:outline-none focus:ring-2 focus:ring-timesnow-red"
-                />
-                <button
-                  type="submit"
-                  className="px-4 py-2 bg-timesnow-red text-white rounded-r-md hover:bg-red-700 transition-colors"
-                >
-                  {t?.subscribe || 'Subscribe'}
-                </button>
-              </div>
-            </form>
+            <h3 className="text-lg font-semibold mb-4">{isHindi ? 'उपयोगी उपकरण' : 'Utility Tools'}</h3>
+            <ul className="space-y-2">
+              <li><Link to="/tools/emi-calculator" className="text-gray-300 hover:text-white transition-colors flex items-center group">
+                <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
+                <span className="ml-2">{isHindi ? 'ईएमआई कैलकुलेटर' : 'EMI Calculator'}</span>
+              </Link></li>
+              <li><Link to="/tools/bmi-calculator" className="text-gray-300 hover:text-white transition-colors flex items-center group">
+                <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
+                <span className="ml-2">{isHindi ? 'बीएमआई कैलकुलेटर' : 'BMI Calculator'}</span>
+              </Link></li>
+              <li><Link to="/tools/fuel-prices" className="text-gray-300 hover:text-white transition-colors flex items-center group">
+                <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
+                <span className="ml-2">{isHindi ? 'ईंधन की कीमतें' : 'Fuel Prices'}</span>
+              </Link></li>
+              <li><Link to="/tools/metal-rates" className="text-gray-300 hover:text-white transition-colors flex items-center group">
+                <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
+                <span className="ml-2">{isHindi ? 'धातु की दरें' : 'Metal Rates'}</span>
+              </Link></li>
+              <li><Link to="/tools/aqi-checker" className="text-gray-300 hover:text-white transition-colors flex items-center group">
+                <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
+                <span className="ml-2">{isHindi ? 'एक्यूआई चेकर' : 'AQI Checker'}</span>
+              </Link></li>
+            </ul>
+          </div>
+        </div>
 
-            <div className="mb-4">
+        {/* Language Toggle & Copyright */}
+        <div className="border-t border-gray-700 mt-8 pt-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between">
+            <div className="flex items-center space-x-4 mb-4 sm:mb-0">
               <button
                 onClick={toggleLanguage}
                 className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors p-2 rounded hover:bg-gray-700"
@@ -232,57 +242,6 @@ const Footer = () => {
                   <span>Madhya Pradesh, India</span>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Additional Social Media & External Links */}
-        <div className="border-t border-gray-700 mt-8 pt-8">
-          <div className="text-center">
-            <h3 className="text-lg font-semibold mb-4 text-timesnow-red">
-              {isHindi ? 'अतिरिक्त प्लेटफॉर्म' : 'Additional Platforms'}
-            </h3>
-            <div className="flex flex-wrap justify-center gap-4 mb-4">
-              <a 
-                href="https://www.snapchat.com/add/timesnowindia" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-gray-400 hover:text-yellow-300 transition-colors p-2 rounded hover:bg-gray-700"
-              >
-                <span className="text-2xl">📱</span>
-                <span>Snapchat</span>
-                <ExternalLink size={14} />
-              </a>
-              <a 
-                href="https://t.me/timesnowindia" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-gray-400 hover:text-blue-400 transition-colors p-2 rounded hover:bg-gray-700"
-              >
-                <span className="text-2xl">📬</span>
-                <span>Telegram</span>
-                <ExternalLink size={14} />
-              </a>
-              <a 
-                href="https://www.tiktok.com/@timesnowindia" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-gray-400 hover:text-pink-400 transition-colors p-2 rounded hover:bg-gray-700"
-              >
-                <span className="text-2xl">🎵</span>
-                <span>TikTok</span>
-                <ExternalLink size={14} />
-              </a>
-              <a 
-                href="https://www.reddit.com/r/timesnowindia" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-gray-400 hover:text-orange-400 transition-colors p-2 rounded hover:bg-gray-700"
-              >
-                <span className="text-2xl">🤖</span>
-                <span>Reddit</span>
-                <ExternalLink size={14} />
-              </a>
             </div>
           </div>
         </div>

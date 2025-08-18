@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
-import { Mail, Phone, MapPin, Clock, Send, MessageSquare, Building, Globe } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Send, MessageSquare, Building, Globe, User } from 'lucide-react'
 
 const ContactUs = () => {
   const { isHindi } = useLanguage()
@@ -149,6 +149,25 @@ const ContactUs = () => {
 
           {/* Contact Information */}
           <div className="space-y-6">
+            {/* News Reporter Contact */}
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-timesnow-red">
+              <div className="flex items-start gap-4">
+                <div className="bg-red-100 p-3 rounded-lg">
+                  <User size={24} className="text-timesnow-red" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-800 mb-2">
+                    {isHindi ? 'समाचार रिपोर्टर' : 'News Reporter'}
+                  </h3>
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <p><strong>Name:</strong> Mr. Shubham Meena</p>
+                    <p><strong>Mobile:</strong> <a href="tel:+919926890112" className="text-timesnow-red hover:underline">+91 9926890112</a></p>
+                    <p><strong>Address:</strong> Harangaon Tehsil, Khategaon District, Dewas, Madhya Pradesh 455336</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Office Address */}
             <div className="bg-white rounded-lg shadow-md p-6">
               <div className="flex items-start gap-4">
@@ -180,9 +199,9 @@ const ContactUs = () => {
                     {isHindi ? 'संपर्क नंबर' : 'Contact Numbers'}
                   </h3>
                   <div className="space-y-2 text-sm text-gray-600">
-                    <p><strong>Editorial:</strong> +91 120 434 0000</p>
-                    <p><strong>Advertising:</strong> +91 120 434 0001</p>
-                    <p><strong>Support:</strong> +91 120 434 0002</p>
+                    <p><strong>Main Contact:</strong> <a href="tel:+919926890112" className="text-timesnow-red hover:underline">+91 9926890112</a></p>
+                    <p><strong>Editorial:</strong> <a href="tel:+919926890112" className="text-timesnow-red hover:underline">+91 9926890112</a></p>
+                    <p><strong>Support:</strong> <a href="tel:+919926890112" className="text-timesnow-red hover:underline">+91 9926890112</a></p>
                   </div>
                 </div>
               </div>
@@ -201,7 +220,7 @@ const ContactUs = () => {
                   <div className="space-y-2 text-sm text-gray-600">
                     <p><strong>General:</strong> info@timesnowindia.com</p>
                     <p><strong>Editorial:</strong> editorial@timesnowindia.com</p>
-                    <p><strong>Advertising:</strong> ads@timesnowindia.com</p>
+                    <p><strong>Reporter:</strong> shubham.meena@timesnowindia.com</p>
                   </div>
                 </div>
               </div>

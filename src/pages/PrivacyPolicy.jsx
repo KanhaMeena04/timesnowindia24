@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
-import { Shield, Eye, Lock, Database, Globe, User, Bell, Settings } from 'lucide-react'
+import { Shield, Eye, Lock, Database, Globe, User, Bell, Settings, Mail, Phone, MapPin } from 'lucide-react'
 
 const PrivacyPolicy = () => {
   const { isHindi } = useLanguage()
@@ -260,40 +260,43 @@ const PrivacyPolicy = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-              <Bell size={28} className="text-orange-600" />
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
               {isHindi ? 'संपर्क जानकारी' : 'Contact Information'}
-            </h2>
-            
-            <p className="text-gray-700 leading-relaxed mb-6">
-              {isHindi 
-                ? 'यदि आपके पास गोपनीयता नीति के बारे में कोई प्रश्न या चिंता है, तो कृपया हमसे संपर्क करें:'
-                : 'If you have any questions or concerns about this Privacy Policy, please contact us:'
-              }
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                  {isHindi ? 'गोपनीयता अधिकारी' : 'Privacy Officer'}
-                </h3>
-                <p className="text-gray-700">
-                  Email: privacy@timesnowindia.com<br />
-                  Phone: +91 120 434 0005<br />
-                  Address: Times Now India 27*7 Centre, 6th Floor, Sector 135, Noida, UP 201304
-                </p>
+            </h3>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3">
+                <Mail size={20} className="text-timesnow-red" />
+                <p className="text-gray-600">privacy@timesnowindia.com</p>
               </div>
-              
-              <div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                  {isHindi ? 'डेटा संरक्षण अधिकारी' : 'Data Protection Officer'}
-                </h3>
-                <p className="text-gray-700">
-                  Email: dpo@timesnowindia.com<br />
-                  Phone: +91 120 434 0006<br />
-                  Address: Times Now India 27*7 Centre, 6th Floor, Sector 135, Noida, UP 201304
-                </p>
+              <div className="flex items-center space-x-3">
+                <Phone size={20} className="text-timesnow-red" />
+                <p className="text-gray-600">+91 9926890112</p>
+              </div>
+              <div className="flex items-center space-x-3">
+                <MapPin size={20} className="text-timesnow-red" />
+                <p className="text-gray-600">Times Now India 27*7 Centre, Noida</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Data Protection Officer */}
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
+              {isHindi ? 'डेटा संरक्षण अधिकारी' : 'Data Protection Officer'}
+            </h3>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3">
+                <Mail size={20} className="text-timesnow-red" />
+                <p className="text-gray-600">dpo@timesnowindia.com</p>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone size={20} className="text-timesnow-red" />
+                <p className="text-gray-600">+91 9926890112</p>
+              </div>
+              <div className="flex items-center space-x-3">
+                <MapPin size={20} className="text-timesnow-red" />
+                <p className="text-gray-600">Times Now India 27*7 Centre, Noida</p>
               </div>
             </div>
           </div>

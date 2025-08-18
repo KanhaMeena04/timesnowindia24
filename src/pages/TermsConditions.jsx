@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
-import { FileText, CheckCircle, AlertTriangle, Shield, Users, Globe, Lock, Scale } from 'lucide-react'
+import { FileText, CheckCircle, AlertTriangle, Shield, Users, Globe, Lock, Scale, Mail, Phone, MapPin } from 'lucide-react'
 
 const TermsConditions = () => {
   const { isHindi } = useLanguage()
@@ -354,39 +354,43 @@ const TermsConditions = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
               {isHindi ? 'संपर्क जानकारी' : 'Contact Information'}
-            </h2>
-            
-            <p className="text-gray-700 leading-relaxed mb-6">
-              {isHindi 
-                ? 'यदि आपके पास इन नियमों और शर्तों के बारे में कोई प्रश्न है, तो कृपया हमसे संपर्क करें:'
-                : 'If you have any questions about these terms and conditions, please contact us:'
-              }
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                  {isHindi ? 'कानूनी विभाग' : 'Legal Department'}
-                </h3>
-                <p className="text-gray-700">
-                  Email: legal@timesnowindia.com<br />
-                  Phone: +91 120 434 0007<br />
-                  Address: Times Now India 27*7 Centre, 6th Floor, Sector 135, Noida, UP 201304
-                </p>
+            </h3>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3">
+                <Mail size={20} className="text-timesnow-red" />
+                <p className="text-gray-600">legal@timesnowindia.com</p>
               </div>
-              
-              <div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                  {isHindi ? 'ग्राहक सहायता' : 'Customer Support'}
-                </h3>
-                <p className="text-gray-700">
-                  Email: support@timesnowindia.com<br />
-                  Phone: +91 120 434 0008<br />
-                  Address: Times Now India 27*7 Centre, 6th Floor, Sector 135, Noida, UP 201304
-                </p>
+              <div className="flex items-center space-x-3">
+                <Phone size={20} className="text-timesnow-red" />
+                <p className="text-gray-600">+91 9926890112</p>
+              </div>
+              <div className="flex items-center space-x-3">
+                <MapPin size={20} className="text-timesnow-red" />
+                <p className="text-gray-600">Times Now India 27*7 Centre, Noida</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Legal Department */}
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
+              {isHindi ? 'कानूनी विभाग' : 'Legal Department'}
+            </h3>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3">
+                <Mail size={20} className="text-timesnow-red" />
+                <p className="text-gray-600">legal@timesnowindia.com</p>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone size={20} className="text-timesnow-red" />
+                <p className="text-gray-600">+91 9926890112</p>
+              </div>
+              <div className="flex items-center space-x-3">
+                <MapPin size={20} className="text-timesnow-red" />
+                <p className="text-gray-600">Times Now India 27*7 Centre, Noida</p>
               </div>
             </div>
           </div>
