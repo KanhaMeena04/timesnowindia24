@@ -1,10 +1,10 @@
-# Times Now India 27*7 - React Frontend
+# Times Now India 24/7 - React Frontend
 
-A fully responsive React-based frontend for Times Now India 27*7 news website, built with modern web technologies and best practices.
+A fully responsive React-based frontend for Times Now India 24/7 news website, built with modern web technologies and best practices.
 
 ## Features
 
-- **Modern UI/UX**: Clean, professional design matching Times Now India 27*7's aesthetic
+- **Modern UI/UX**: Clean, professional design matching Times Now India 24/7's aesthetic
 - **Responsive Design**: Mobile-first approach with seamless desktop experience
 - **Multi-language Support**: English and Hindi language support
 - **Real-time Updates**: Live news feed and breaking news notifications
@@ -69,7 +69,7 @@ src/
 
 ## Color Scheme
 
-The project uses Times Now India 27*7's color scheme defined in `tailwind.config.js`:
+The project uses Times Now India 24/7's color scheme defined in `tailwind.config.js`:
 - Primary Red: `#dc2626` (timesnow-red)
 - Dark: `#1f2937` (timesnow-dark)
 - Light: `#f9fafb` (timesnow-light)

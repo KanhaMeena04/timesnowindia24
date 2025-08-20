@@ -98,7 +98,7 @@ export const translations = {
     newsletterLabel: "Newsletter",
     emailPlaceholder: "Enter your email",
     subscribe: "Subscribe",
-    copyright: "© 2024 Times Now India 27*7. All rights reserved.",
+    copyright: "© 2025 Times Now India 24/7. All rights reserved.",
     
     // Page Headers
     indiaNews: "India News",
@@ -191,7 +191,7 @@ export const translations = {
     // Live TV
     liveStream: "Live Stream",
     liveTVStream: "Live TV Stream",
-    watchABPLive: "Watch Times Now India 27*7",
+    watchABPLive: "Watch Times Now India 24/7",
     watchLive: "Watch Live",
     
     // Common
@@ -215,7 +215,7 @@ export const translations = {
     yourAdCouldBeHere: "Your ad could be here",
     
     // Company Description
-    companyDescription: "Times Now India 27*7 is India's most trusted news channel, providing the latest breaking news, live updates, and in-depth analysis of current events."
+    companyDescription: "Times Now India 24/7 is India's most trusted news channel, providing the latest breaking news, live updates, and in-depth analysis of current events."
   },
   
   Hindi: {
@@ -317,7 +317,7 @@ export const translations = {
     newsletterLabel: "न्यूजलेटर",
     emailPlaceholder: "अपना ईमेल दर्ज करें",
     subscribe: "सब्सक्राइब करें",
-    copyright: "© 2024 Times Now India 27*7। सर्वाधिकार सुरक्षित।",
+    copyright: "© 2025 Times Now India 24/7। सर्वाधिकार सुरक्षित।",
     
     // Page Headers
     indiaNews: "भारत समाचार",
@@ -410,7 +410,7 @@ export const translations = {
     // Live TV
     liveStream: "लाइव स्ट्रीम",
     liveTVStream: "लाइव टीवी स्ट्रीम",
-    watchABPLive: "Times Now India 27*7 24/7 देखें",
+    watchABPLive: "Times Now India 24/7 देखें",
     watchLive: "लाइव देखें",
     
     // Common
@@ -434,6 +434,6 @@ export const translations = {
     yourAdCouldBeHere: "आपका विज्ञापन यहां हो सकता है",
     
     // Company Description
-    companyDescription: "Times Now India 27*7 भारत का सबसे विश्वसनीय समाचार चैनल है, जो ताजा तोड़ने वाले समाचार, लाइव अपडेट और वर्तमान घटनाओं का गहन विश्लेषण प्रदान करता है।"
+    companyDescription: "Times Now India 24/7 भारत का सबसे विश्वसनीय समाचार चैनल है, जो ताजा तोड़ने वाले समाचार, लाइव अपडेट और वर्तमान घटनाओं का गहन विश्लेषण प्रदान करता है।"
   }
 }

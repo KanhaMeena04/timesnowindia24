@@ -95,11 +95,11 @@ const Header = () => {
           <Link to="/" className="flex items-center space-x-2">
             <img 
               src={logoImage} 
-              alt="Times Now India 27*7" 
+              alt="Times Now India 27/7" 
               className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain" 
             />
             <span className="text-lg sm:text-xl md:text-2xl font-bold text-timesnow-dark">
-              Times Now India 27*7
+              Times Now India 24/7
             </span>
           </Link>
 

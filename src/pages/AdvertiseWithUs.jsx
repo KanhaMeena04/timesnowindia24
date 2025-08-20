@@ -32,8 +32,8 @@ const AdvertiseWithUs = () => {
       title: isHindi ? 'टीवी विज्ञापन' : 'TV Advertising',
       icon: Tv,
       description: isHindi 
-        ? 'Times Now India 27*7 चैनल पर प्राइम टाइम विज्ञापन'
-        : 'Prime time advertising on Times Now India 27*7 channel',
+        ? 'Times Now India 24/7 चैनल पर प्राइम टाइम विज्ञापन'
+        : 'Prime time advertising on Times Now India 24/7 channel',
       features: [
         isHindi ? 'प्राइम टाइम स्लॉट' : 'Prime time slots',
         isHindi ? 'न्यूज़ ब्रेक्स के दौरान' : 'During news breaks',
@@ -49,8 +49,8 @@ const AdvertiseWithUs = () => {
       title: isHindi ? 'प्रिंट विज्ञापन' : 'Print Advertising',
       icon: Newspaper,
       description: isHindi 
-        ? 'Times Now India 27*7 समाचार पत्र और पत्रिकाओं में विज्ञापन'
-        : 'Advertising in Times Now India 27*7 newspapers and magazines',
+        ? 'Times Now India 24/7 समाचार पत्र और पत्रिकाओं में विज्ञापन'
+        : 'Advertising in Times Now India 24/7 newspapers and magazines',
       features: [
         isHindi ? 'फ्रंट पेज विज्ञापन' : 'Front page ads',
         isHindi ? 'इनसाइड पेज विज्ञापन' : 'Inside page ads',
@@ -66,8 +66,8 @@ const AdvertiseWithUs = () => {
       title: isHindi ? 'रेडियो विज्ञापन' : 'Radio Advertising',
       icon: Radio,
       description: isHindi 
-        ? 'Times Now India 27*7 रेडियो नेटवर्क पर विज्ञापन'
-        : 'Advertising on Times Now India 27*7 radio network',
+        ? 'Times Now India 24/7 रेडियो नेटवर्क पर विज्ञापन'
+        : 'Advertising on Times Now India 24/7 radio network',
       features: [
         isHindi ? 'प्राइम टाइम स्लॉट' : 'Prime time slots',
         isHindi ? 'न्यूज़ बुलेटिन के दौरान' : 'During news bulletins',
@@ -279,7 +279,7 @@ const AdvertiseWithUs = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin size={20} className="text-timesnow-red" />
-                  <p className="text-gray-600">Times Now India 27*7 Centre, Noida</p>
+                  <p className="text-gray-600">Times Now India 24/7 Centre, Noida</p>
                 </div>
               </div>
             </div>

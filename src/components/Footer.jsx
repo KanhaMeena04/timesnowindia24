@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Facebook, Twitter, Instagram, Youtube, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
+import reporterPhoto from './subh.png'
 
 const Footer = () => {
   const { toggleLanguage, isHindi } = useLanguage()
@@ -56,7 +57,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">{t?.aboutUs || 'About Us'}</h3>
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
-              {t?.companyDescription || 'Times Now India 27*7 is India\'s most trusted news channel, providing the latest breaking news, live updates, and in-depth analysis of current events.'}
+              {t?.companyDescription || 'Times Now India 24/7 is India\'s most trusted news channel, providing the latest breaking news, live updates, and in-depth analysis of current events.'}
             </p>
             
             {/* Social Media Links */}
@@ -177,7 +178,8 @@ const Footer = () => {
             </div>
 
             <div className="text-sm text-gray-400">
-              <p>{t?.copyright || '© 2024 Times Now India 27*7. All rights reserved.'}</p>
+              <p>{t?.copyright || '© 2025 Times Now India 24/7. All rights reserved.'}</p>
+              <p className="mt-1 text-xs text-timesnow-red font-medium">Design & Developed by AI INTEGRATORZ TECHLOGOIES</p>
             </div>
           </div>
         </div>
@@ -190,11 +192,15 @@ const Footer = () => {
                 {isHindi ? 'समाचार संवाददाता' : 'News Reporter'}
               </h3>
               <div className="bg-gray-800 rounded-lg p-4">
-                <div className="flex items-start space-x-3">
-                  <div className="bg-timesnow-red p-2 rounded-full">
-                    <Mail size={20} className="text-white" />
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <img 
+                      src={reporterPhoto} 
+                      alt="Mr. Shubham Meena - News Reporter" 
+                      className="w-20 h-20 rounded-full object-cover border-2 border-timesnow-red shadow-lg"
+                    />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h4 className="font-semibold text-white mb-2">Mr. Shubham Meena</h4>
                     <div className="space-y-2 text-sm text-gray-300">
                       <div className="flex items-center space-x-2">

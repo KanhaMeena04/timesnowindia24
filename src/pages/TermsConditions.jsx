@@ -17,8 +17,8 @@ const TermsConditions = () => {
           </h1>
           <p className="text-xl text-green-100 max-w-2xl mx-auto">
             {isHindi 
-              ? 'Times Now India 27*7 वेबसाइट और सेवाओं के उपयोग के लिए नियम और शर्तें।'
-              : 'Terms and conditions for using Times Now India 27*7 website and services.'
+                      ? 'Times Now India 24/7 वेबसाइट और सेवाओं के उपयोग के लिए नियम और शर्तें।'
+        : 'Terms and conditions for using Times Now India 24/7 website and services.'
             }
           </p>
         </div>
@@ -41,8 +41,8 @@ const TermsConditions = () => {
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               {isHindi 
-                ? 'Times Now India 27*7 ("हम," "हमारा," या "हमें") की वेबसाइट और सेवाओं का उपयोग करके, आप इन नियमों और शर्तों ("नियम") के अनुपालन के लिए सहमत होते हैं।'
-                : 'By using Times Now India 27*7 ("we," "our," or "us") website and services, you agree to comply with these terms and conditions ("Terms").'
+                        ? 'Times Now India 24/7 ("हम," "हमारा," या "हमें") की वेबसाइट और सेवाओं का उपयोग करके, आप इन नियमों और शर्तों ("नियम") के अनुपालन के लिए सहमत होते हैं।'
+        : 'By using Times Now India 24/7 ("we," "our," or "us") website and services, you agree to comply with these terms and conditions ("Terms").'
               }
             </p>
             <p className="text-gray-700 leading-relaxed">
@@ -139,8 +139,8 @@ const TermsConditions = () => {
             
             <p className="text-gray-700 leading-relaxed mb-4">
               {isHindi 
-                ? 'हमारी वेबसाइट और सेवाओं पर सभी सामग्री, जिसमें लेख, छवियां, वीडियो और सॉफ्टवेयर शामिल हैं, Times Now India 27*7 या उसके लाइसेंसकर्ताओं की बौद्धिक संपदा है।'
-                : 'All content on our website and services, including articles, images, videos, and software, is the intellectual property of Times Now India 27*7 or its licensors.'
+                        ? 'हमारी वेबसाइट और सेवाओं पर सभी सामग्री, जिसमें लेख, छवियां, वीडियो और सॉफ्टवेयर शामिल हैं, Times Now India 24/7 या उसके लाइसेंसकर्ताओं की बौद्धिक संपदा है।'
+        : 'All content on our website and services, including articles, images, videos, and software, is the intellectual property of Times Now India 24/7 or its licensors.'
               }
             </p>
             
@@ -369,7 +369,7 @@ const TermsConditions = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin size={20} className="text-timesnow-red" />
-                <p className="text-gray-600">Times Now India 27*7 Centre, Noida</p>
+                <p className="text-gray-600">Times Now India 24/7 Centre, Noida</p>
               </div>
             </div>
           </div>
@@ -390,7 +390,7 @@ const TermsConditions = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin size={20} className="text-timesnow-red" />
-                <p className="text-gray-600">Times Now India 27*7 Centre, Noida</p>
+                <p className="text-gray-600">Times Now India 24/7 Centre, Noida</p>
               </div>
             </div>
           </div>

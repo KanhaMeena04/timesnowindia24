@@ -179,8 +179,8 @@ const ContactUs = () => {
                     {isHindi ? 'कार्यालय का पता' : 'Office Address'}
                   </h3>
                   <p className="text-gray-600 text-sm">
-                    Times Now India 27*7 Network Pvt. Ltd.<br />
-                    Times Now India 27*7 Centre, 6th Floor<br />
+                                Times Now India 24/7 Network Pvt. Ltd.<br />
+            Times Now India 24/7 Centre, 6th Floor<br />
                     Sector 135, Noida<br />
                     Uttar Pradesh 201304, India
                   </p>

@@ -41,8 +41,8 @@ const PrivacyPolicy = () => {
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               {isHindi 
-                ? 'Times Now India 27*7 ("हम," "हमारा," या "हमें") आपकी गोपनीयता का सम्मान करता है। यह गोपनीयता नीति बताती है कि हम आपकी व्यक्तिगत जानकारी को कैसे एकत्र, उपयोग और संरक्षित करते हैं।'
-                : 'Times Now India 27*7 ("we," "our," or "us") respects your privacy. This Privacy Policy explains how we collect, use, and protect your personal information.'
+                        ? 'Times Now India 24/7 ("हम," "हमारा," या "हमें") आपकी गोपनीयता का सम्मान करता है। यह गोपनीयता नीति बताती है कि हम आपकी व्यक्तिगत जानकारी को कैसे एकत्र, उपयोग और संरक्षित करते हैं।'
+        : 'Times Now India 24/7 ("we," "our," or "us") respects your privacy. This Privacy Policy explains how we collect, use, and protect your personal information.'
               }
             </p>
             <p className="text-gray-700 leading-relaxed">
@@ -275,7 +275,7 @@ const PrivacyPolicy = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin size={20} className="text-timesnow-red" />
-                <p className="text-gray-600">Times Now India 27*7 Centre, Noida</p>
+                <p className="text-gray-600">Times Now India 24/7 Centre, Noida</p>
               </div>
             </div>
           </div>
@@ -296,7 +296,7 @@ const PrivacyPolicy = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin size={20} className="text-timesnow-red" />
-                <p className="text-gray-600">Times Now India 27*7 Centre, Noida</p>
+                <p className="text-gray-600">Times Now India 24/7 Centre, Noida</p>
               </div>
             </div>
           </div>

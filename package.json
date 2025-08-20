@@ -1,7 +1,7 @@
 {
   "name": "times-now-india",
   "version": "0.0.0",
-  "description": "Times Now India 27*7 - React Frontend",
+  "description": "Times Now India 24/7 - React Frontend",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
